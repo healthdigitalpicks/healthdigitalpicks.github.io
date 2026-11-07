@@ -3,58 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Buying Guide - Top Recommended Products</title>
+    <title>Smart Buying Guide - Health and Digital Product Reviews</title>
+    <meta name="description" content="Honest reviews and smart buying guides for health products and digital tools.">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; }
-        header { background-color: #1a252f; color: white; text-align: center; padding: 30px 15px; }
-        header h1 { margin: 0; font-size: 28px; }
-        header p { margin-top: 8px; font-size: 15px; color: #bdc3c7; }
-        .container { max-width: 900px; margin: 20px auto; padding: 0 15px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .card img { width: 100%; max-height: 180px; object-fit: contain; border-radius: 5px; margin-bottom: 15px; }
-        .card h3 { margin-top: 0; color: #2c3e50; }
-        .card p { font-size: 14px; color: #666; height: 50px; }
-        .btn { display: inline-block; background-color: #e67e22; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 10px; }
-        .btn:hover { background-color: #d35400; }
-        .counter { text-align: center; margin-top: 40px; color: #777; font-size: 14px; }
+        :root {
+            --green-dark: #14532d;
+            --green: #1f8a4c;
+            --green-light: #e8f5ec;
+            --indigo: #3b4cca;
+            --indigo-light: #eceefc;
+            --text: #1f2a24;
+            --muted: #5b6b62;
+            --border: #d5e5db;
+            --bg: #f6faf7;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--green-dark);
+            text-decoration: none;
+        }
+
+        .nav-links { display: flex; gap: 16px; }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover { color: var(--green); }
+
+        .hero {
+            background: linear-gradient(135deg, #14532d 0%, #1f8a4c 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 54px 20px 60px;
+        }
+
+        .hero h1 { font-size: 30px; margin-bottom: 12px; line-height: 1.25; }
+
+        .hero p {
+            max-width: 560px;
+            margin: 0 auto 24px;
+            color: #d6efde;
+            font-size: 16px;
+        }
+
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .hero-btn.light { background: #ffffff; color: var(--green-dark); }
+        .hero-btn.outline { border: 2px solid #ffffff; color: #ffffff; }
+
+        .trust {
+            max-width: 1000px;
+            margin: -28px auto 0;
+            padding: 0 16px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            position: relative;
+        }
+
+        .trust-item {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 16px;
+            box-shadow: 0 4px 12px rgba(20, 83, 45, 0.08);
+        }
+
+        .trust-item strong { display: block; color: var(--green-dark); font-size: 15px; }
+        .trust-item span { color: var(--muted); font-size: 13px; }
+
+        .section { max-width: 1000px; margin: 0 auto; padding: 44px 16px 8px; }
+
+        .section-head { margin-bottom: 20px; }
+        .section-head h2 { font-size: 24px; color: var(--green-dark); }
+        .section-head p { color: var(--muted); font-size: 14px; }
+        .section-head.digital h2 { color: var(--indigo); }
+
+        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(20, 83, 45, 0.07);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(20, 83, 45, 0.14); }
+
+        .card-img { position: relative; }
+
+        .card-img img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--green);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+        }
+
+        .tag.digital { background: var(--indigo); }
+
+        .card-body { padding: 16px; display: flex; flex-direction: column; flex: 1; }
+        .card h3 { font-size: 18px; margin-bottom: 8px; }
+        .card p { font-size: 14px; color: var(--muted); margin-bottom: 16px; flex: 1; }
+
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--green);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 12px;
+            border-radius: 10px;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover { background: var(--green-dark); }
+        .btn.digital { background: var(--indigo); }
+        .btn.digital:hover { background: #2a38a3; }
+
+        .soon {
+            border: 2px dashed #b9c0f0;
+            background: var(--indigo-light);
+            border-radius: 16px;
+            padding: 36px 20px;
+            text-align: center;
+            color: var(--indigo);
+            font-weight: 600;
+        }
+
+        .soon span { display: block; color: var(--muted); font-weight: 400; font-size: 14px; margin-top: 4px; }
+
+        .about {
+            max-width: 760px;
+            margin: 44px auto 0;
+            padding: 0 16px;
+            text-align: center;
+        }
+
+        .about h2 { color: var(--green-dark); margin-bottom: 8px; }
+        .about p { color: var(--muted); font-size: 15px; }
+
+        footer {
+            margin-top: 48px;
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            padding: 26px 16px 34px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        footer p { max-width: 720px; margin: 0 auto 10px; }
+        .counter img { vertical-align: middle; }
+
+        @media (min-width: 700px) {
+            .hero h1 { font-size: 40px; }
+            .trust { grid-template-columns: repeat(3, 1fr); }
+            .grid { grid-template-columns: repeat(3, 1fr); }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Smart Buying Guide</h1>
-    <p>Honest Reviews & Smart Buying Guides for Health, Tech, and Digital Tools</p>
-</header>
+    <nav class="nav">
+        <a href="#top" class="logo">Smart Buying Guide</a>
+        <div class="nav-links">
+            <a href="#health">Health</a>
+            <a href="#digital">Digital</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
 
-<div class="container">
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500" alt="GlucoTonic">
-            <h3>GlucoTonic</h3>
-            <p>Advanced natural support formula designed for daily health and wellness maintenance.</p>
-            <a href="https://www.digistore24.com/redir/660957/Kiani11/" class="btn" target="_blank">Learn More</a>
+    <header class="hero" id="top">
+        <h1>Smart choices for your health and your digital life</h1>
+        <p>Honest reviews and simple buying guides, so you can decide with confidence before you spend.</p>
+        <div class="hero-buttons">
+            <a href="#health" class="hero-btn light">Health Products</a>
+            <a href="#digital" class="hero-btn outline">Digital Products</a>
         </div>
-        
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500" alt="Smoothie Diet">
-            <h3>The Official Smoothie Diet</h3>
-            <p>21-day custom weight loss program designed for fast, effective results.</p>
-            <a href="https://official.smoothiediet.com/#aff=Kiani11" class="btn" target="_blank">Learn More</a>
-        </div>
-        <div class="card">
-            <img src="GP8USY48.png" alt="The Encyclopedia of Power Foods">
-            <h3>The Encyclopedia of Power Foods</h3>
-            <p>A food guide that explains the nutritional value of everyday foods, to help you make informed choices about what you eat.</p>
-            <a href="https://wsl.365dailyhealth.com/landing-sale-page1713272576177#aff=Kiani11" class="btn" target="_blank">Learn More</a>
-        </div>
+    </header>
+
+    <div class="trust">
+        <div class="trust-item"><strong>Honest reviews</strong><span>Plain words, no hype.</span></div>
+        <div class="trust-item"><strong>Hand-picked</strong><span>Only products worth a look.</span></div>
+        <div class="trust-item"><strong>Easy to compare</strong><span>Clear details on one page.</span></div>
     </div>
 
-    <div class="counter">
-        <p>Total Page Visits: <img src="https://profile-counter.glitch.me/shahidkiani11-smart-buying-guide/count.svg" alt="Visitor Counter" style="vertical-align: middle;"></p>
-    </div>
-</div>
-<script data-goatcounter="https://smartbuying.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+    <section class="section" id="health">
+        <div class="section-head">
+            <h2>Health Products</h2>
+            <p>Wellness and nutrition picks. Always read the official page before you buy.</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500" alt="GlucoTonic">
+                    <span class="tag">Health</span>
+                </div>
+                <div class="card-body">
+                    <h3>GlucoTonic</h3>
+                    <p>A daily wellness supplement. Read the details on the official page before you decide.</p>
+                    <a href="https://www.digistore24.com/redir/660957/Kiani11/" class="btn" target="_blank" rel="noopener sponsored">View Details</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500" alt="The Official Smoothie Diet">
+                    <span class="tag">Health</span>
+                </div>
+                <div class="card-body">
+                    <h3>The Official Smoothie Diet</h3>
+                    <p>A 21-day smoothie program with ready recipes and a shopping list.</p>
+                    <a href="https://official.smoothiediet.com/#aff=Kiani11" class="btn" target="_blank" rel="noopener sponsored">View Details</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="GP8USY48.png" alt="The Encyclopedia of Power Foods">
+                    <span class="tag">Health</span>
+                </div>
+                <div class="card-body">
+                    <h3>The Encyclopedia of Power Foods</h3>
+                    <p>A food guide that explains the nutritional value of everyday foods.</p>
+                    <a href="https://wsl.365dailyhealth.com/landing-sale-page1713272576177#aff=Kiani11" class="btn" target="_blank" rel="noopener sponsored">View Details</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="digital">
+        <div class="section-head digital">
+            <h2>Digital Products</h2>
+            <p>Courses, tools and systems for working and earning online.</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="soon" style="grid-column: 1 / -1;">
+                Digital products coming soon
+                <span>New picks are being added. Check back shortly.</span>
+            </div>
+
+            <!--
+            DIGITAL PRODUCT CARD TEMPLATE
+            Copy this block inside the grid above, replace the 4 items, then delete the "coming soon" box.
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="IMAGE-LINK-OR-FILE-NAME" alt="PRODUCT NAME">
+                    <span class="tag digital">Digital</span>
+                </div>
+                <div class="card-body">
+                    <h3>PRODUCT NAME</h3>
+                    <p>Short description.</p>
+                    <a href="YOUR-AFFILIATE-LINK" class="btn digital" target="_blank" rel="noopener sponsored">View Details</a>
+                </div>
+            </div>
+            -->
+
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About this guide</h2>
+        <p>Smart Buying Guide shares honest product recommendations in health and digital tools. The goal is simple: give you clear information so you can make your own decision.</p>
+    </section>
+
+    <footer>
+        <p><strong>Affiliate disclosure:</strong> Some links on this site are affiliate links. If you buy through them, I may earn a commission at no extra cost to you.</p>
+        <p><strong>Health disclaimer:</strong> The information here is for general knowledge only and is not medical advice. Talk to a doctor before starting any supplement or diet.</p>
+        <p class="counter">Total Page Visits: <img src="https://profile-counter.glitch.me/shahidkiani11-smart-buying-guide/count.svg" alt="Visitor Counter"></p>
+    </footer>
+
+    <script data-goatcounter="https://smartbuying.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
 </body>
 </html>
