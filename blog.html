@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Smart Buying Guide</title>
-    <meta name="description" content="Articles and guides on health products and digital tools from Smart Buying Guide.">
+    <meta name="description" content="Helpful guides on health products, Google Ads and digital marketing tools.">
+
     <style>
         :root {
             --green-dark: #14532d;
@@ -15,47 +17,187 @@
             --border: #d5e5db;
             --bg: #f6faf7;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: "Segoe UI", Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-        .nav { position: sticky; top: 0; z-index: 10; background: #ffffff; border-bottom: 1px solid var(--border); padding: 12px 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
-        .logo { font-weight: 700; font-size: 18px; color: var(--green-dark); text-decoration: none; }
-        .nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
-        .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; }
-        .nav-links a:hover { color: var(--green); }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        .hero { background: linear-gradient(135deg, #14532d 0%, #1f8a4c 100%); color: #ffffff; text-align: center; padding: 44px 20px 48px; }
-        .hero h1 { font-size: 30px; margin-bottom: 8px; }
-        .hero p { color: #d6efde; font-size: 16px; }
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-        .section { max-width: 1000px; margin: 0 auto; padding: 36px 16px 8px; }
-        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
 
-        .card { background: #ffffff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 8px rgba(20, 83, 45, 0.07); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(20, 83, 45, 0.14); }
-        .card-img { position: relative; }
-        .card-img img { width: 100%; height: 210px; object-fit: cover; object-position: top; display: block; }
-        .tag { position: absolute; top: 12px; left: 12px; background: var(--indigo); color: #ffffff; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
-        .card-body { padding: 16px; display: flex; flex-direction: column; flex: 1; }
-        .card h3 { font-size: 18px; margin-bottom: 8px; }
-        .card p { font-size: 14px; color: var(--muted); margin-bottom: 16px; flex: 1; }
-        .btn { display: block; text-align: center; background: var(--green); color: #ffffff; text-decoration: none; font-weight: 700; padding: 12px; border-radius: 10px; }
-        .btn:hover { background: var(--green-dark); }
+        .logo {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--green-dark);
+            text-decoration: none;
+        }
 
-        footer { margin-top: 48px; background: #ffffff; border-top: 1px solid var(--border); padding: 24px 16px 32px; text-align: center; font-size: 13px; color: var(--muted); }
-        footer p { max-width: 720px; margin: 0 auto 10px; }
+        .nav-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #14532d, #1f8a4c);
+            color: white;
+            text-align: center;
+            padding: 44px 20px 48px;
+        }
+
+        .hero h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            color: #d6efde;
+            font-size: 16px;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 36px 16px 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(20, 83, 45, 0.07);
+        }
+
+        .card-img {
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+
+        .tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--indigo);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+        }
+
+        .card-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--green);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .btn:hover {
+            background: var(--green-dark);
+        }
+
+        footer {
+            margin-top: 48px;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 24px 16px 32px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        footer p {
+            max-width: 720px;
+            margin: 0 auto 10px;
+        }
 
         @media (min-width: 700px) {
-            .hero h1 { font-size: 38px; }
-            .grid { grid-template-columns: repeat(3, 1fr); }
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav class="nav">
         <a href="index.html" class="logo">Smart Buying Guide</a>
+
         <div class="nav-links">
             <a href="index.html#health">Health</a>
             <a href="index.html#digital">Digital</a>
@@ -65,18 +207,20 @@
     </nav>
 
     <header class="hero">
-        <h1>Blog</h1>
+        <h1>Our Blog</h1>
         <p>Simple guides and honest articles on health and digital tools.</p>
     </header>
 
     <section class="section">
         <div class="grid">
 
+            <!-- BLOG 1: JOSEPH'S WELL -->
             <div class="card">
                 <div class="card-img">
                     <img src="josephswell.jpg" alt="Joseph's Well Explained">
                     <span class="tag">Digital</span>
                 </div>
+
                 <div class="card-body">
                     <h3>Joseph's Well Explained: What It Is and What to Check Before You Buy</h3>
                     <p>A plain explanation of this DIY water-from-air guide, with safety notes and questions to ask first.</p>
@@ -84,15 +228,31 @@
                 </div>
             </div>
 
+            <!-- BLOG 2: GOOGLE ADS -->
             <div class="card">
                 <div class="card-img">
                     <img src="google-ads.png" alt="Google Ads for Beginners">
                     <span class="tag">Digital</span>
                 </div>
+
                 <div class="card-body">
                     <h3>Google Ads for Beginners: Plan Your First Search Campaign</h3>
                     <p>A simple five-step plan: goal, keywords, ad copy, budget and how to evaluate results.</p>
                     <a href="google-ads-for-beginners.html" class="btn">Read Article</a>
+                </div>
+            </div>
+
+            <!-- BLOG 3: CHATGPT PROMPTS -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://healthdigitalpicks.github.io/8G5IJ4GE.webp" alt="1000+ ChatGPT Prompts">
+                    <span class="tag">Digital Marketing</span>
+                </div>
+
+                <div class="card-body">
+                    <h3>1000+ ChatGPT Prompts for Your Online Marketing</h3>
+                    <p>Discover useful prompts for social media, SEO, email marketing and growing your online business.</p>
+                    <a href="/blog/1000-chatgpt-prompts.html" class="btn">Read Article</a>
                 </div>
             </div>
 
@@ -101,7 +261,16 @@
 
     <footer>
         <p><strong>Affiliate disclosure:</strong> Some links on this site are affiliate links. If you buy through them, I may earn a commission at no extra cost to you.</p>
-        <p>Follow us on <a href="https://www.facebook.com/WHF.shahid/" target="_blank" rel="noopener" style="color: #1f8a4c; font-weight: bold;">Facebook</a></p>
+
+        <p>
+            Follow us on
+            <a href="https://www.facebook.com/WHF.shahid/"
+               target="_blank"
+               rel="noopener"
+               style="color: #1f8a4c; font-weight: bold;">
+                Facebook
+            </a>
+        </p>
     </footer>
 
     <script data-goatcounter="https://smartbuying.goatcounter.com/count"
