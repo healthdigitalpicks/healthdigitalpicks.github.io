@@ -20,534 +20,679 @@
     --bg:#f6f9f6;
     --border:#e1eae3;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-a{text-decoration:none}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+    scroll-padding-top:100px;
+}
+
+body {
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+}
+
+a {
+    text-decoration:none;
+}
 
 /* TOP BAR */
-.topbar{
-    background:var(--dark);color:white;padding:8px 5%;
-    display:flex;justify-content:space-between;align-items:center;
-    gap:12px;font-size:13px
+
+.topbar {
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:8px 15px;
+    font-size:13px;
 }
-.topbar a{color:#f5d78d;margin-left:15px}
 
 /* HEADER */
-.header{
-    background:white;padding:14px 5%;display:flex;
-    justify-content:space-between;align-items:center;gap:20px;
-    flex-wrap:wrap;position:sticky;top:0;z-index:100;
-    box-shadow:0 3px 12px rgba(0,0,0,.06)
-}
-.brand{display:flex;align-items:center;gap:11px}
-.brand-icon{
-    width:55px;height:55px;border-radius:50%;
-    background:linear-gradient(135deg,#123b35,#27a875);
-    color:white;display:flex;justify-content:center;
-    align-items:center;font-size:30px;font-weight:bold
-}
-.brand h1{color:var(--dark);font-size:27px;line-height:1.2}
-.brand h1 span{color:var(--gold)}
-.brand p{color:var(--muted);font-size:11px}
-.nav{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
-.nav a{
-    color:var(--dark);font-size:14px;font-weight:bold;
-    padding:9px 13px;border-radius:25px;transition:.2s
-}
-.nav a:hover,.nav a.active{background:var(--green);color:white}
 
-/* HERO */
-.hero{
-    background:linear-gradient(110deg,#eaf5ee,#f8fbf7);
-    min-height:430px;padding:50px 7%;
-    display:flex;justify-content:space-between;
-    align-items:center;gap:35px;overflow:hidden
+header {
+    background:white;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
 }
-.hero-content{max-width:620px;flex:1}
-.hero h2{
-    color:var(--dark);font-size:clamp(34px,5vw,53px);
-    line-height:1.13;margin-bottom:18px
+
+.logo {
+    color:var(--dark);
+    font-size:24px;
+    font-weight:800;
 }
-.hero h2 span{color:var(--green)}
-.hero p{color:#435d51;font-size:17px;max-width:520px;margin-bottom:25px}
-.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
-.btn{
-    display:inline-block;padding:12px 22px;border-radius:30px;
-    font-weight:bold;font-size:14px;transition:.2s
+
+.logo span {
+    color:var(--green);
 }
-.btn:hover{transform:translateY(-3px)}
-.btn-green{background:var(--green);color:white}
-.btn-gold{background:var(--gold);color:#263b34}
+
+nav {
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+nav a {
+    color:var(--dark);
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav a:hover {
+    color:var(--green);
+}
 
 /* HERO SLIDER */
-.hero-slider{
-    width:42%;max-width:470px;min-width:250px;
-    position:relative;background:white;padding:9px;
-    border:5px solid white;border-radius:22px;
-    box-shadow:0 12px 30px rgba(0,0,0,.13)
-}
-.hero-slider img{
-    display:block;width:100%;height:285px;
-    object-fit:contain;border-radius:13px;
-    background:#f5f8f5
-}
-.slide-arrow{
-    position:absolute;top:45%;transform:translateY(-50%);
-    width:38px;height:38px;border:0;border-radius:50%;
-    background:rgba(18,59,53,.88);color:white;
-    font-size:23px;cursor:pointer;z-index:3
-}
-.slide-arrow:hover{background:var(--gold);color:var(--dark)}
-.slide-prev{left:15px}
-.slide-next{right:15px}
-.slide-dots{
-    display:flex;justify-content:center;gap:9px;
-    padding:12px 0 2px
-}
-.slide-dot{
-    width:10px;height:10px;border:0;border-radius:50%;
-    background:#c7d6cc;cursor:pointer;padding:0
-}
-.slide-dot.active{background:var(--green);width:24px;border-radius:10px}
 
-/* MOVING MESSAGE */
-.ticker{background:var(--dark);color:white;overflow:hidden;white-space:nowrap;padding:11px 0}
-.ticker-track{
-    display:inline-block;min-width:200%;
-    animation:tickerMove 28s linear infinite;
-    font-size:14px;font-weight:bold;letter-spacing:.4px
-}
-.ticker-track span{margin:0 30px;color:#f4d68a}
-@keyframes tickerMove{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
+.hero-slider {
+    position:relative;
+    min-height:470px;
+    max-width:1500px;
+    margin:25px auto;
+    overflow:hidden;
+    background:#eaf5ee;
 }
 
-/* TRUST */
-.trust{
-    background:white;display:grid;grid-template-columns:repeat(4,1fr);
-    gap:12px;padding:22px 5%;border-bottom:1px solid var(--border)
+.slide {
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:35px;
+    padding:55px 8%;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1s ease, visibility 1s ease;
 }
-.trust-item{
-    display:flex;justify-content:center;align-items:center;
-    gap:11px;padding:6px;border-right:1px solid var(--border)
+
+.slide.active {
+    opacity:1;
+    visibility:visible;
+    z-index:2;
 }
-.trust-item:last-child{border:0}
-.trust-icon{font-size:29px}
-.trust-item strong{display:block;color:var(--dark);font-size:14px}
-.trust-item small{color:var(--muted);font-size:11px}
+
+.slide-content {
+    flex:1;
+    max-width:560px;
+}
+
+.slide-content .eyebrow {
+    color:var(--green);
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.slide-content h1 {
+    font-size:clamp(32px,4.5vw,54px);
+    line-height:1.15;
+    color:var(--dark);
+    margin-bottom:20px;
+}
+
+.slide-content p {
+    font-size:17px;
+    color:#52665d;
+    margin-bottom:28px;
+}
+
+.slide-button {
+    display:inline-block;
+    background:var(--green);
+    color:white;
+    padding:14px 27px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.slide-button:hover {
+    background:var(--gold);
+    transform:translateY(-3px);
+}
+
+.slide img {
+    width:43%;
+    height:320px;
+    object-fit:contain;
+    border-radius:18px;
+}
+
+.slider-dots {
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:10px;
+    z-index:5;
+}
+
+.slider-dots button {
+    width:12px;
+    height:12px;
+    border:0;
+    border-radius:20px;
+    background:#a6b9ad;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.slider-dots button.active {
+    width:30px;
+    background:var(--green);
+}
+
+/* MOVING TICKER */
+
+.ticker {
+    background:var(--dark);
+    color:white;
+    overflow:hidden;
+    padding:12px 0;
+    white-space:nowrap;
+}
+
+.ticker-track {
+    display:inline-block;
+    animation:tickerMove 25s linear infinite;
+}
+
+.ticker-track span {
+    margin:0 35px;
+    font-weight:bold;
+}
+
+@keyframes tickerMove {
+    from {transform:translateX(0)}
+    to {transform:translateX(-50%)}
+}
+
+/* TRUST BAR */
+
+.trust-bar {
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    flex-wrap:wrap;
+    padding:24px 15px;
+    background:white;
+    color:var(--dark);
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* SECTIONS */
+
+.section {
+    padding:65px 7%;
+}
+
+.section-heading {
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-heading h2 {
+    color:var(--dark);
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.section-heading p {
+    color:var(--muted);
+    font-size:15px;
+}
 
 /* SEARCH */
-.search-area{
-    max-width:700px;margin:32px auto 10px;
-    padding:0 18px;text-align:center
-}
-.search-area h2{color:var(--dark);font-size:24px;margin-bottom:12px}
-.search-box{
-    display:flex;background:white;border:1px solid var(--border);
-    border-radius:35px;overflow:hidden;
-    box-shadow:0 4px 14px rgba(0,0,0,.05)
-}
-.search-box input{
-    flex:1;min-width:0;border:0;outline:0;
-    padding:14px 20px;font-size:15px
-}
-.search-box button{
-    border:0;background:var(--green);color:white;
-    padding:0 25px;font-size:14px;font-weight:bold;cursor:pointer
-}
-.search-box button:hover{background:var(--dark)}
-#searchMessage{color:var(--muted);font-size:13px;margin-top:10px}
 
-/* PRODUCTS */
-.products-area{max-width:1450px;margin:auto;padding:30px 4% 45px}
-.product-section{margin-bottom:45px}
-.section-heading{
-    display:flex;justify-content:space-between;
-    align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:6px
+.search-area {
+    max-width:550px;
+    margin:0 auto 35px;
 }
-.section-heading h2{color:var(--dark);font-size:27px}
-.section-heading.digital h2{color:#3153a8}
-.section-description{color:var(--muted);font-size:14px;margin-bottom:20px}
-.view-all{
-    display:inline-block;color:white;background:var(--green);
-    padding:8px 16px;border-radius:25px;font-size:12px;font-weight:bold
+
+.search-area input {
+    width:100%;
+    padding:15px 20px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    font-size:15px;
+    outline:none;
+    background:white;
 }
-.view-all.digital{background:#3153a8}
-.product-grid{
-    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px
+
+.search-area input:focus {
+    border-color:var(--green);
 }
-.card{
-    background:white;border:1px solid var(--border);
-    border-radius:14px;overflow:hidden;display:flex;
-    flex-direction:column;box-shadow:0 4px 13px rgba(0,0,0,.045);
-    transition:transform .25s,box-shadow .25s
+
+.search-message {
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+    margin-top:8px;
 }
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(0,0,0,.10)}
-.card-image{height:190px;background:#edf4ee;overflow:hidden}
-.card-image img{
-    width:100%;height:100%;object-fit:cover;
-    display:block;transition:transform .4s
+
+/* PRODUCT CARDS */
+
+.product-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
 }
-.card:hover .card-image img{transform:scale(1.04)}
-.card-body{padding:17px;display:flex;flex-direction:column;flex:1}
-.card h3{color:var(--dark);font-size:18px;line-height:1.35;margin-bottom:9px}
-.card p{color:var(--muted);font-size:13px;margin-bottom:16px;flex:1}
-.card-btn{
-    display:block;background:var(--green);color:white;
-    text-align:center;padding:11px;border-radius:25px;
-    font-size:13px;font-weight:bold;transition:.2s
+
+.product-card {
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:.3s;
+    box-shadow:0 5px 18px rgba(0,0,0,.04);
 }
-.card-btn:hover{background:var(--dark)}
-.digital-card .card-btn{background:#3153a8}
-.digital-card .card-btn:hover{background:var(--dark)}
-.no-results{
-    display:none;text-align:center;color:var(--muted);
-    padding:25px;background:white;border-radius:12px;margin-top:15px
+
+.product-card:hover {
+    transform:translateY(-7px);
+    box-shadow:0 12px 28px rgba(0,0,0,.09);
+}
+
+.product-card img {
+    width:100%;
+    height:190px;
+    object-fit:contain;
+    padding:15px;
+    background:#f3f8f4;
+}
+
+.product-info {
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.product-info .category {
+    color:var(--green);
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.product-info h3 {
+    color:var(--dark);
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.product-info p {
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:18px;
+    flex:1;
+}
+
+.product-button {
+    display:block;
+    background:var(--green);
+    color:white;
+    padding:11px 15px;
+    text-align:center;
+    border-radius:25px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.product-button:hover {
+    background:var(--gold);
 }
 
 /* ABOUT */
-.about{
-    margin:0 4% 35px;padding:35px 5%;
-    background:linear-gradient(110deg,#e7f4e9,#f7fbf5);
-    border:1px solid #d8e9da;border-radius:18px;
-    display:flex;align-items:center;gap:25px
+
+.about-section {
+    background:var(--light);
+    text-align:center;
 }
-.about-icon{
-    flex-shrink:0;width:85px;height:85px;border-radius:50%;
-    border:2px solid var(--green);display:flex;
-    align-items:center;justify-content:center;font-size:38px
+
+.about-content {
+    max-width:800px;
+    margin:auto;
 }
-.about h2{color:var(--dark);font-size:25px;margin-bottom:7px}
-.about p{color:#4b6256;font-size:14px}
+
+.about-content h2 {
+    color:var(--dark);
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.about-content p {
+    color:#53665d;
+    margin-bottom:12px;
+}
 
 /* FOOTER */
-footer{background:var(--dark);color:white;padding:35px 5% 20px;text-align:center;font-size:13px}
-footer p{max-width:900px;margin:0 auto 13px}
-footer strong{color:#f5d78d}
-.footer-links{margin:20px 0}
-.footer-links a{color:#f5d78d;margin:0 10px;display:inline-block}
-.copyright{
-    border-top:1px solid rgba(255,255,255,.2);
-    padding-top:16px;margin-top:18px;color:#d4e3dc
+
+footer {
+    background:var(--dark);
+    color:white;
+    padding:40px 7% 20px;
+    text-align:center;
 }
 
-/* TABLET */
-@media(max-width:900px){
-    .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .hero-slider{width:40%}
-    .hero-slider img{height:240px}
-    .trust{grid-template-columns:repeat(2,1fr)}
-    .trust-item:nth-child(2){border-right:0}
+footer h2 {
+    margin-bottom:12px;
+}
+
+footer p {
+    color:#d3e3da;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.footer-links {
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    flex-wrap:wrap;
+    margin:20px 0;
+}
+
+.footer-links a {
+    color:white;
+    font-size:14px;
+}
+
+.copyright {
+    border-top:1px solid rgba(255,255,255,.2);
+    padding-top:18px;
+    margin-top:20px;
+    font-size:12px;
 }
 
 /* MOBILE */
-@media(max-width:600px){
-    .topbar{justify-content:center;text-align:center;flex-wrap:wrap}
-    .header{justify-content:center;padding:12px 3%}
-    .brand{justify-content:center}
-    .brand h1{font-size:23px}
-    .nav{justify-content:center}
-    .nav a{padding:7px 9px;font-size:12px}
-    .hero{flex-direction:column;text-align:center;padding:35px 6%;gap:25px}
-    .hero p{margin-left:auto;margin-right:auto;font-size:15px}
-    .hero-buttons{justify-content:center}
-    .hero-slider{width:100%;max-width:430px;min-width:0}
-    .hero-slider img{height:220px}
-    .trust{padding:15px 3%}
-    .trust-item{justify-content:flex-start;border:0}
-    .products-area{padding:25px 4%}
-    .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .card-image{height:130px}
-    .card-body{padding:11px}
-    .card h3{font-size:15px}
-    .card p{font-size:12px}
-    .card-btn{font-size:12px;padding:9px 5px}
-    .section-heading h2{font-size:22px}
-    .about{flex-direction:column;text-align:center;padding:25px}
+
+@media(max-width:750px) {
+    header {
+        flex-direction:column;
+    }
+
+    nav {
+        justify-content:center;
+        gap:14px;
+    }
+
+    .logo {
+        font-size:22px;
+    }
+
+    .hero-slider {
+        min-height:570px;
+        margin:15px;
+    }
+
+    .slide {
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        padding:35px 22px 65px;
+        gap:18px;
+    }
+
+    .slide img {
+        width:85%;
+        height:220px;
+    }
+
+    .slide-content p {
+        font-size:15px;
+    }
+
+    .trust-bar {
+        gap:15px;
+        font-size:12px;
+    }
+
+    .section {
+        padding:45px 5%;
+    }
 }
-@media(max-width:360px){
-    .product-grid{grid-template-columns:1fr}
-    .card-image{height:180px}
-}
+
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
-    <div>Smart Reviews | Useful Guides | Better Choices</div>
-    <div>
-        <a href="https://www.facebook.com/WHF.shahid/" target="_blank" rel="noopener">Facebook</a>
-        <a href="blog.html">Blog</a>
-    </div>
+    Welcome to HealthDigitalPicks | Discover Better Choices
 </div>
 
-<!-- HEADER -->
-<header class="header">
-    <a href="index.html" class="brand">
-        <div class="brand-icon">H</div>
-        <div>
-            <h1>HealthDigital<span>Picks</span></h1>
-            <p>Smart Choices for a Healthier & Smarter Life</p>
-        </div>
-    </a>
+<header>
+    <a href="index.html" class="logo">Health<span>Digital</span>Picks</a>
 
-    <nav class="nav">
-        <a href="index.html" class="active">Home</a>
+    <nav>
+        <a href="index.html">Home</a>
         <a href="#health">Health</a>
         <a href="#digital">Digital</a>
         <a href="blog.html">Blog</a>
         <a href="#about">About</a>
-        <a href="mailto:shahidkiani1@gmail.com">Contact</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<!-- HERO WITH AUTOMATIC IMAGE SLIDER -->
-<section class="hero">
+<!-- HERO SLIDER -->
 
-    <div class="hero-content">
-        <h2>Smart choices for your <span>health</span> and your <span>digital life</span></h2>
+<section class="hero-slider">
 
-        <p>
-            Discover useful health products, digital tools and online guides.
-            Get clear information and make smarter buying decisions.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#health" class="btn btn-green">Explore Health Products →</a>
-            <a href="#digital" class="btn btn-gold">Explore Digital Products →</a>
+    <div class="slide active">
+        <div class="slide-content">
+            <div class="eyebrow">Healthy Lifestyle</div>
+            <h1>Healthy Living Starts Here</h1>
+            <p>Discover useful health products and simple ideas to support a healthier lifestyle.</p>
+            <a href="#health" class="slide-button">Explore Health Products</a>
         </div>
+
+        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900" alt="Fresh vegetables and healthy food">
     </div>
 
-    <div class="hero-slider" aria-label="Featured images slideshow">
-        <img
-            id="heroSlideImage"
-            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900"
-            alt="Fresh vegetables and healthy food">
-
-        <button class="slide-arrow slide-prev" id="slidePrev" aria-label="Previous image">‹</button>
-        <button class="slide-arrow slide-next" id="slideNext" aria-label="Next image">›</button>
-
-        <div class="slide-dots" id="slideDots">
-            <button class="slide-dot active" aria-label="Slide 1"></button>
-            <button class="slide-dot" aria-label="Slide 2"></button>
-            <button class="slide-dot" aria-label="Slide 3"></button>
-            <button class="slide-dot" aria-label="Slide 4"></button>
-            <button class="slide-dot" aria-label="Slide 5"></button>
-            <button class="slide-dot" aria-label="Slide 6"></button>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="eyebrow">Digital Growth</div>
+            <h1>Grow Your Digital Skills</h1>
+            <p>Explore digital tools, online courses and practical resources for your online journey.</p>
+            <a href="#digital" class="slide-button">Explore Digital Products</a>
         </div>
+
+        <img src="google-ads.png" alt="Google Ads digital marketing">
+    </div>
+
+    <div class="slide">
+        <div class="slide-content">
+            <div class="eyebrow">Smart Online Tools</div>
+            <h1>Discover Smarter Online Tools</h1>
+            <p>Find useful AI prompts and resources to improve your productivity and marketing.</p>
+            <a href="#digital" class="slide-button">Discover Products</a>
+        </div>
+
+        <img src="8G5IJ4GE.webp" alt="ChatGPT marketing prompts">
+    </div>
+
+    <div class="slider-dots">
+        <button class="active" aria-label="Slide 1" onclick="showSlide(0)"></button>
+        <button aria-label="Slide 2" onclick="showSlide(1)"></button>
+        <button aria-label="Slide 3" onclick="showSlide(2)"></button>
     </div>
 
 </section>
 
-<!-- MOVING STRIP -->
+<!-- TICKER -->
+
 <div class="ticker">
     <div class="ticker-track">
-        <span>🌿 HEALTH & WELLNESS</span>
-        Smart Buying Guides
-        <span>💻 DIGITAL TOOLS</span>
-        Useful Online Resources
-        <span>⭐ MAKE SMARTER CHOICES</span>
-        HealthDigitalPicks
-        <span>🌿 HEALTH & WELLNESS</span>
-        Smart Buying Guides
-        <span>💻 DIGITAL TOOLS</span>
-        Useful Online Resources
-        <span>⭐ MAKE SMARTER CHOICES</span>
-        HealthDigitalPicks
+        <span>Healthy Living</span>
+        <span>Digital Products</span>
+        <span>Online Learning</span>
+        <span>Smart Tools</span>
+        <span>Healthy Living</span>
+        <span>Digital Products</span>
+        <span>Online Learning</span>
+        <span>Smart Tools</span>
     </div>
 </div>
 
 <!-- TRUST BAR -->
-<section class="trust">
-    <div class="trust-item">
-        <div class="trust-icon">🛡️</div>
-        <div><strong>Helpful Reviews</strong><small>Clear Information</small></div>
+
+<div class="trust-bar">
+    <span>✓ Useful Resources</span>
+    <span>✓ Health & Wellness</span>
+    <span>✓ Digital Learning</span>
+    <span>✓ Easy Product Discovery</span>
+</div>
+
+<!-- HEALTH PRODUCTS -->
+
+<section class="section" id="health">
+
+    <div class="section-heading">
+        <h2>Health & Wellness</h2>
+        <p>Explore products and resources for your health journey.</p>
     </div>
-    <div class="trust-item">
-        <div class="trust-icon">🔎</div>
-        <div><strong>Easy Discovery</strong><small>Explore Useful Products</small></div>
+
+    <div class="product-grid">
+
+        <div class="product-card searchable-card" data-search="glucotonic glucose health wellness">
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600" alt="GlucoTonic">
+            <div class="product-info">
+                <span class="category">Health</span>
+                <h3>GlucoTonic</h3>
+                <p>Discover more about this health and wellness product.</p>
+                <a class="product-button" href="https://www.digistore24.com/redir/660957/Kiani11/" target="_blank" rel="noopener noreferrer">Explore Product</a>
+            </div>
+        </div>
+
+        <div class="product-card searchable-card" data-search="official smoothie diet healthy food diet">
+            <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600" alt="Smoothie Diet">
+            <div class="product-info">
+                <span class="category">Health</span>
+                <h3>The Official Smoothie Diet</h3>
+                <p>Explore smoothie recipes and learn more about this program.</p>
+                <a class="product-button" href="https://official.smoothiediet.com/#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+            </div>
+        </div>
+
+        <div class="product-card searchable-card" data-search="encyclopedia power foods nutrition health">
+            <img src="GP8USY48.png" alt="The Encyclopedia of Power Foods">
+            <div class="product-info">
+                <span class="category">Health</span>
+                <h3>The Encyclopedia of Power Foods</h3>
+                <p>Discover information about foods and nutrition.</p>
+                <a class="product-button" href="https://wsl.365dailyhealth.com/landing-sale-page1713272576177#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+            </div>
+        </div>
+
     </div>
-    <div class="trust-item">
-        <div class="trust-icon">💚</div>
-        <div><strong>Health & Wellness</strong><small>Explore Healthy Living</small></div>
-    </div>
-    <div class="trust-item">
-        <div class="trust-icon">🚀</div>
-        <div><strong>Digital Learning</strong><small>Learn and Grow</small></div>
-    </div>
+
 </section>
 
-<!-- SEARCH -->
-<section class="search-area">
-    <h2>Find What You Are Looking For</h2>
-    <div class="search-box">
-        <input type="search" id="productSearch"
-            placeholder="Search health products or digital tools..."
-            aria-label="Search products">
-        <button type="button" id="searchButton">Search</button>
+<!-- DIGITAL PRODUCTS -->
+
+<section class="section" id="digital" style="background:#edf5ef;">
+
+    <div class="section-heading">
+        <h2>Digital Products & Online Tools</h2>
+        <p>Explore digital resources, marketing tools and online learning.</p>
     </div>
-    <p id="searchMessage">Search by product name or keyword.</p>
+
+    <div class="search-area">
+        <input type="text" id="productSearch" placeholder="Search products by name or keyword...">
+        <div class="search-message" id="searchMessage">Search by product name or keyword.</div>
+    </div>
+
+    <div class="product-grid" id="digitalProducts">
+
+        <div class="product-card searchable-card" data-search="google ads matze marketing advertising">
+            <img src="google-ads.png" alt="Google Ads with Matze">
+            <div class="product-info">
+                <span class="category">Digital Marketing</span>
+                <h3>Google Ads with Matze</h3>
+                <p>Explore a resource for learning about Google Ads and online advertising.</p>
+                <a class="product-button" href="https://einfachmitmatze.de/google-ads-search/#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+            </div>
+        </div>
+
+        <div class="product-card searchable-card" data-search="josephs well water revolution">
+            <img src="josephswell.jpg" alt="Joseph's Well">
+            <div class="product-info">
+                <span class="category">Digital Resource</span>
+                <h3>Joseph's Well</h3>
+                <p>Learn more about this water-related product and its information.</p>
+                <a class="product-button" href="https://uswaterrevolution.com/#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+            </div>
+        </div>
+
+        <div class="product-card searchable-card" data-search="1000 chatgpt prompts online marketing ai">
+            <img src="8G5IJ4GE.webp" alt="1000 ChatGPT Prompts">
+            <div class="product-info">
+                <span class="category">AI & Marketing</span>
+                <h3>1000+ ChatGPT Prompts for Online Marketing</h3>
+                <p>Explore prompts and ideas for online marketing and productivity.</p>
+                <a class="product-button" href="https://heikoboos.com/1000-chatgpt-prompts-for-online-marketing/#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+            </div>
+        </div>
+
+        <div class="product-card searchable-card" data-search="b2b sales masterclass business sales">
+            <img src="B2B.JPG" alt="B2B Sales Masterclass">
+            <div class="product-info">
+                <span class="category">Business & Sales</span>
+                <h3>B2B Sales Masterclass</h3>
+                <p>Explore sales training resources for business development.</p>
+                <a class="product-button" href="https://www.checkout-ds24.com/redir/764294/Kiani11/" target="_blank" rel="noopener noreferrer">Explore Product</a>
+            </div>
+        </div>
+
+    </div>
+
 </section>
-
-<!-- PRODUCTS -->
-<main class="products-area">
-
-    <!-- HEALTH PRODUCTS -->
-    <section class="product-section" id="health">
-        <div class="section-heading">
-            <h2>🌿 Health Products</h2>
-            <a href="#health" class="view-all">Explore Health →</a>
-        </div>
-
-        <p class="section-description">
-            Explore wellness, nutrition and healthy-living products.
-            Read the official information before making a purchase.
-        </p>
-
-        <div class="product-grid">
-
-            <article class="card searchable-card" data-search="health gluco tonic glucotonic wellness supplement">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600"
-                        alt="GlucoTonic" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>GlucoTonic</h3>
-                    <p>Explore this wellness supplement and read the product information on its official page.</p>
-                    <a href="https://www.digistore24.com/redir/660957/Kiani11/"
-                        class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
-                </div>
-            </article>
-
-            <article class="card searchable-card" data-search="health smoothie diet official recipes nutrition">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600"
-                        alt="The Official Smoothie Diet" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>The Official Smoothie Diet</h3>
-                    <p>Explore a smoothie program with recipes and a shopping list.</p>
-                    <a href="https://official.smoothiediet.com/#aff=Kiani11"
-                        class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
-                </div>
-            </article>
-
-            <article class="card searchable-card" data-search="health encyclopedia power foods nutrition food guide">
-                <div class="card-image">
-                    <img src="GP8USY48.png" alt="The Encyclopedia of Power Foods" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>The Encyclopedia of Power Foods</h3>
-                    <p>A food guide to explore the nutritional value of everyday foods.</p>
-                    <a href="https://wsl.365dailyhealth.com/landing-sale-page1713272576177#aff=Kiani11"
-                        class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- DIGITAL PRODUCTS -->
-    <section class="product-section" id="digital">
-        <div class="section-heading digital">
-            <h2>💻 Digital Products</h2>
-            <a href="#digital" class="view-all digital">Explore Digital →</a>
-        </div>
-
-        <p class="section-description">
-            Discover digital guides, online courses and tools for learning and business.
-        </p>
-
-        <div class="product-grid">
-
-            <article class="card digital-card searchable-card" data-search="digital google ads matze advertising marketing">
-                <div class="card-image">
-                    <img src="google-ads.png" alt="Google Ads with Matze" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>Google Ads with Matze</h3>
-                    <p>Explore a guide to Google Ads and search campaign basics.</p>
-                    <a href="https://einfachmitmatze.de/google-ads-search/#aff=Kiani11"
-                        class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
-                </div>
-            </article>
-
-            <article class="card digital-card searchable-card" data-search="digital josephs well water system diy water from air">
-                <div class="card-image">
-                    <img src="josephswell.jpg" alt="Joseph's Well" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>Joseph's Well</h3>
-                    <p>Explore a DIY water-from-air project with guides and blueprints.</p>
-                    <a href="https://uswaterrevolution.com/#aff=Kiani11"
-                        class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
-                </div>
-            </article>
-
-            <article class="card digital-card searchable-card" data-search="digital chatgpt prompts online marketing ai social media seo">
-                <div class="card-image">
-                    <img src="8G5IJ4GE.webp" alt="1000+ ChatGPT Prompts for Online Marketing" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>1000+ ChatGPT Prompts</h3>
-                    <p>Explore prompts for marketing, social media, SEO and online business.</p>
-                    <a href="https://heikoboos.com/1000-chatgpt-prompts-for-online-marketing/#aff=Kiani11"
-                        class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
-                </div>
-            </article>
-
-            <article class="card digital-card searchable-card" data-search="digital b2b sales masterclass business sales course">
-                <div class="card-image">
-                    <img src="B2B.JPG" alt="B2B Sales Masterclass" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>B2B Sales Masterclass</h3>
-                    <p>Explore sales strategies, prospecting and business development training.</p>
-                    <a href="https://www.checkout-ds24.com/redir/764294/Kiani11/"
-                        class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <div class="no-results" id="noResults">
-        No matching products found. Try another search.
-    </div>
-
-</main>
 
 <!-- ABOUT -->
-<section class="about" id="about">
-    <div class="about-icon">🤝</div>
-    <div>
+
+<section class="section about-section" id="about">
+
+    <div class="about-content">
         <h2>About HealthDigitalPicks</h2>
-        <p>
-            HealthDigitalPicks shares useful information, product recommendations
-            and guides in health and digital topics. Our aim is to help visitors
-            explore options and make informed decisions.
-        </p>
+
+        <p>Welcome to HealthDigitalPicks. Our goal is to share useful health resources, digital products, online tools and learning opportunities.</p>
+
+        <p>We aim to help visitors discover resources that may support their personal interests, learning and online journey.</p>
+
+        <p>Explore our products and blog to discover more useful information.</p>
     </div>
+
 </section>
 
 <!-- FOOTER -->
-<footer>
-    <p>
-        <strong>Affiliate Disclosure:</strong>
-        Some links on this website are affiliate links. If you purchase through
-        these links, I may earn a commission at no additional cost to you.
-    </p>
 
-    <p>
-        <strong>Health Disclaimer:</strong>
-        Content on this website is for general information only and is not medical
-        advice. Consult a qualified healthcare professional before making health
-        or supplement decisions.
-    </p>
+<footer id="contact">
+
+    <h2>HealthDigitalPicks</h2>
+
+    <p>Discover Health, Digital Products & Useful Online Resources.</p>
 
     <div class="footer-links">
         <a href="index.html">Home</a>
@@ -556,132 +701,79 @@ footer strong{color:#f5d78d}
         <a href="blog.html">Blog</a>
         <a href="#about">About</a>
         <a href="mailto:shahidkiani1@gmail.com">Contact</a>
-        <a href="https://www.facebook.com/WHF.shahid/" target="_blank" rel="noopener">Facebook</a>
     </div>
+
+    <p>Affiliate Disclosure: Some links on this website are affiliate links. We may earn a commission if you make a purchase through them, at no extra cost to you.</p>
+
+    <p>Health Disclaimer: Information on this website is for general informational purposes and is not a substitute for professional medical advice.</p>
 
     <div class="copyright">
-        © 2026 HealthDigitalPicks. All rights reserved.
+        © 2026 HealthDigitalPicks. All Rights Reserved.
     </div>
+
 </footer>
 
-<!-- IMAGE SLIDER JAVASCRIPT -->
-<script>
-const heroSlides = [
-    {
-        image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900",
-        alt: "Fresh vegetables and healthy food"
-    },
-    {
-        image: "GP8USY48.png",
-        alt: "The Encyclopedia of Power Foods"
-    },
-    {
-        image: "google-ads.png",
-        alt: "Google Ads with Matze"
-    },
-    {
-        image: "josephswell.jpg",
-        alt: "Joseph's Well"
-    },
-    {
-        image: "8G5IJ4GE.webp",
-        alt: "1000 ChatGPT Prompts"
-    },
-    {
-        image: "B2B.JPG",
-        alt: "B2B Sales Masterclass"
-    }
-];
+<!-- JAVASCRIPT -->
 
-const heroSlideImage = document.getElementById("heroSlideImage");
-const slideDots = document.querySelectorAll(".slide-dot");
-const slidePrev = document.getElementById("slidePrev");
-const slideNext = document.getElementById("slideNext");
+<script>
+
+// HERO SLIDER
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".slider-dots button");
 
 let currentSlide = 0;
-let slideTimer;
+let sliderTimer;
 
 function showSlide(index) {
-    currentSlide = (index + heroSlides.length) % heroSlides.length;
+    slides[currentSlide].classList.remove("active");
+    dots[currentSlide].classList.remove("active");
 
-    heroSlideImage.src = heroSlides[currentSlide].image;
-    heroSlideImage.alt = heroSlides[currentSlide].alt;
+    currentSlide = index;
 
-    slideDots.forEach(function(dot, i) {
-        dot.classList.toggle("active", i === currentSlide);
-    });
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+
+    restartSlider();
 }
 
 function nextSlide() {
-    showSlide(currentSlide + 1);
+    showSlide((currentSlide + 1) % slides.length);
 }
 
-function previousSlide() {
-    showSlide(currentSlide - 1);
+function restartSlider() {
+    clearInterval(sliderTimer);
+    sliderTimer = setInterval(nextSlide, 5000);
 }
 
-function startSlider() {
-    clearInterval(slideTimer);
-    slideTimer = setInterval(nextSlide, 4000);
-}
+restartSlider();
 
-slideNext.addEventListener("click", function() {
-    nextSlide();
-    startSlider();
-});
+// PRODUCT SEARCH
 
-slidePrev.addEventListener("click", function() {
-    previousSlide();
-    startSlider();
-});
-
-slideDots.forEach(function(dot, index) {
-    dot.addEventListener("click", function() {
-        showSlide(index);
-        startSlider();
-    });
-});
-
-showSlide(0);
-startSlider();
-
-/* Pause slider when the visitor moves the mouse over it */
-const heroSlider = document.querySelector(".hero-slider");
-
-heroSlider.addEventListener("mouseenter", function() {
-    clearInterval(slideTimer);
-});
-
-heroSlider.addEventListener("mouseleave", function() {
-    startSlider();
-});
-
-/* PRODUCT SEARCH */
 const searchInput = document.getElementById("productSearch");
-const searchButton = document.getElementById("searchButton");
-const cards = document.querySelectorAll(".searchable-card");
-const noResults = document.getElementById("noResults");
 const searchMessage = document.getElementById("searchMessage");
+const productCards = document.querySelectorAll("#digitalProducts .searchable-card");
 
 function searchProducts() {
+
     const query = searchInput.value.toLowerCase().trim();
     let visibleCount = 0;
 
-    cards.forEach(function(card) {
-        const searchableText =
-            (card.innerText + " " + card.dataset.search).toLowerCase();
+    productCards.forEach(function(card) {
 
-        const matches = searchableText.includes(query);
+        const text = (
+            card.innerText + " " + card.dataset.search
+        ).toLowerCase();
+
+        const matches = text.includes(query);
 
         card.style.display = matches ? "flex" : "none";
 
         if (matches) {
             visibleCount++;
         }
-    });
 
-    noResults.style.display =
-        visibleCount === 0 ? "block" : "none";
+    });
 
     if (query === "") {
         searchMessage.textContent =
@@ -690,9 +782,9 @@ function searchProducts() {
         searchMessage.textContent =
             visibleCount + " product(s) found.";
     }
+
 }
 
-searchButton.addEventListener("click", searchProducts);
 searchInput.addEventListener("input", searchProducts);
 
 searchInput.addEventListener("keydown", function(event) {
@@ -700,6 +792,7 @@ searchInput.addEventListener("keydown", function(event) {
         searchProducts();
     }
 });
+
 </script>
 
 </body>
