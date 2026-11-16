@@ -5,20 +5,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HealthDigitalPicks | Smart Choices for a Healthier & Smarter Life</title>
-<meta name="description" content="Honest reviews and simple buying guides for health products and digital tools. Make smarter choices with HealthDigitalPicks.">
+<title>HealthDigitalPicks | Health & Digital Products</title>
+<meta name="description" content="Discover health products, digital tools, online courses and useful guides with HealthDigitalPicks.">
 
 <style>
 :root {
-    --dark: #064b36;
-    --green: #078b50;
-    --light-green: #e9f7ee;
-    --gold: #e5a000;
-    --blue: #244bd6;
-    --text: #18352b;
-    --muted: #63756d;
+    --dark: #123b35;
+    --green: #16865b;
+    --green-light: #eaf5ee;
+    --gold: #dfa936;
+    --text: #263b34;
+    --muted: #718078;
     --white: #ffffff;
-    --border: #dce9e1;
+    --background: #f6f9f6;
+    --border: #e1eae3;
 }
 
 * {
@@ -29,12 +29,13 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f7faf8;
     color: var(--text);
+    background: var(--background);
     line-height: 1.6;
 }
 
@@ -51,14 +52,13 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 13px;
     gap: 12px;
+    font-size: 13px;
 }
 
 .topbar a {
-    color: white;
-    margin-left: 12px;
-    font-weight: bold;
+    color: #f5d78d;
+    margin-left: 15px;
 }
 
 /* HEADER */
@@ -71,31 +71,34 @@ a {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 12px rgba(0,0,0,.06);
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 11px;
 }
 
 .brand-icon {
-    width: 58px;
-    height: 58px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #078b50, #b2df8a);
+    background: linear-gradient(135deg, #123b35, #27a875);
     color: white;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 28px;
+    align-items: center;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .brand h1 {
     color: var(--dark);
-    font-size: 29px;
+    font-size: 27px;
     line-height: 1.2;
 }
 
@@ -104,23 +107,24 @@ a {
 }
 
 .brand p {
-    font-size: 12px;
     color: var(--muted);
+    font-size: 11px;
 }
 
 .nav {
     display: flex;
     align-items: center;
-    gap: 8px;
     flex-wrap: wrap;
+    gap: 5px;
 }
 
 .nav a {
     color: var(--dark);
-    padding: 9px 16px;
-    border-radius: 25px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
+    padding: 9px 13px;
+    border-radius: 25px;
+    transition: .2s;
 }
 
 .nav a:hover,
@@ -132,92 +136,120 @@ a {
 /* HERO */
 
 .hero {
-    min-height: 340px;
-    padding: 55px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
     background:
-        linear-gradient(100deg, rgba(239,250,239,.98), rgba(221,244,222,.86)),
+        linear-gradient(100deg, rgba(234,245,238,.97), rgba(222,241,226,.88)),
         url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1600") center/cover;
-    overflow: hidden;
+    min-height: 390px;
+    padding: 55px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 620px;
 }
 
 .hero h2 {
     color: var(--dark);
-    font-size: clamp(34px, 5vw, 52px);
-    line-height: 1.12;
+    font-size: clamp(34px, 5vw, 53px);
+    line-height: 1.13;
     margin-bottom: 18px;
 }
 
 .hero h2 span {
-    color: var(--gold);
+    color: var(--green);
 }
 
 .hero p {
-    color: #315447;
-    font-size: 18px;
-    margin-bottom: 25px;
+    color: #435d51;
+    font-size: 17px;
     max-width: 520px;
+    margin-bottom: 25px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 12px;
 }
 
-.hero-btn {
+.btn {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 12px 22px;
     border-radius: 30px;
     font-weight: bold;
-    background: var(--gold);
-    color: #172b20;
+    font-size: 14px;
     transition: .2s;
 }
 
-.hero-btn:hover {
+.btn:hover {
     transform: translateY(-3px);
-    background: #f3bd38;
 }
 
-.hero-btn.secondary {
-    background: var(--dark);
+.btn-green {
+    background: var(--green);
     color: white;
 }
 
-.hero-visual {
+.btn-gold {
+    background: var(--gold);
+    color: #263b34;
+}
+
+.hero-image {
     width: 38%;
-    min-width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 390px;
+    min-width: 230px;
 }
 
-.hero-visual img {
+.hero-image img {
     width: 100%;
-    max-width: 380px;
-    height: 245px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 22px;
-    border: 7px solid rgba(255,255,255,.8);
-    box-shadow: 0 12px 30px rgba(0,0,0,.16);
+    border-radius: 20px;
+    border: 7px solid white;
+    box-shadow: 0 12px 30px rgba(0,0,0,.13);
 }
 
-/* TRUST BAR */
+/* MOVING MESSAGE STRIP */
+
+.ticker {
+    background: var(--dark);
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 11px 0;
+}
+
+.ticker-track {
+    display: inline-block;
+    min-width: 200%;
+    animation: tickerMove 28s linear infinite;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: .4px;
+}
+
+.ticker-track span {
+    margin: 0 30px;
+    color: #f4d68a;
+}
+
+@keyframes tickerMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* TRUST ITEMS */
 
 .trust {
     background: white;
-    padding: 20px 5%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 12px;
+    padding: 22px 5%;
     border-bottom: 1px solid var(--border);
 }
 
@@ -225,43 +257,93 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
-    border-right: 1px solid #d5e2da;
-    padding: 5px;
+    gap: 11px;
+    padding: 6px;
+    border-right: 1px solid var(--border);
 }
 
 .trust-item:last-child {
-    border-right: none;
+    border: none;
 }
 
 .trust-icon {
-    font-size: 30px;
+    font-size: 29px;
 }
 
 .trust-item strong {
     display: block;
     color: var(--dark);
+    font-size: 14px;
+}
+
+.trust-item small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* SEARCH */
+
+.search-area {
+    max-width: 700px;
+    margin: 32px auto 10px;
+    padding: 0 18px;
+    text-align: center;
+}
+
+.search-area h2 {
+    color: var(--dark);
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.search-box {
+    display: flex;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,.05);
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 14px 20px;
     font-size: 15px;
 }
 
-.trust-item span {
-    color: var(--muted);
-    font-size: 12px;
+.search-box button {
+    border: none;
+    background: var(--green);
+    color: white;
+    padding: 0 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* PRODUCT SECTIONS */
+.search-box button:hover {
+    background: var(--dark);
+}
+
+#searchMessage {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* MAIN PRODUCTS */
 
 .products-area {
     max-width: 1450px;
     margin: auto;
-    padding: 35px 3%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    padding: 30px 4% 45px;
 }
 
 .product-section {
-    min-width: 0;
+    margin-bottom: 45px;
 }
 
 .section-heading {
@@ -269,63 +351,66 @@ a {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 8px;
+    gap: 12px;
+    margin-bottom: 6px;
 }
 
 .section-heading h2 {
     color: var(--dark);
-    font-size: 25px;
+    font-size: 27px;
 }
 
 .section-heading.digital h2 {
-    color: var(--blue);
+    color: #3153a8;
 }
 
 .section-description {
     color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 17px;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 .view-all {
-    background: var(--green);
+    display: inline-block;
     color: white;
-    padding: 8px 15px;
+    background: var(--green);
+    padding: 8px 16px;
     border-radius: 25px;
     font-size: 12px;
     font-weight: bold;
 }
 
 .view-all.digital {
-    background: var(--blue);
+    background: #3153a8;
 }
+
+/* PRODUCT GRID */
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .card {
     background: white;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 3px 12px rgba(0,0,0,.05);
-    transition: .25s;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 13px rgba(0,0,0,.045);
+    transition: transform .25s, box-shadow .25s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 22px rgba(0,0,0,.10);
+    box-shadow: 0 12px 25px rgba(0,0,0,.10);
 }
 
 .card-image {
-    height: 150px;
-    background: #f1f7f2;
+    height: 190px;
+    background: #edf4ee;
     overflow: hidden;
 }
 
@@ -334,26 +419,31 @@ a {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform .4s;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.04);
 }
 
 .card-body {
-    padding: 13px;
+    padding: 17px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
 .card h3 {
-    color: var(--text);
-    font-size: 16px;
+    color: var(--dark);
+    font-size: 18px;
     line-height: 1.35;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 }
 
 .card p {
     color: var(--muted);
-    font-size: 12px;
-    margin-bottom: 13px;
+    font-size: 13px;
+    margin-bottom: 16px;
     flex: 1;
 }
 
@@ -362,10 +452,11 @@ a {
     background: var(--green);
     color: white;
     text-align: center;
-    padding: 9px 8px;
+    padding: 11px;
     border-radius: 25px;
-    font-weight: bold;
     font-size: 13px;
+    font-weight: bold;
+    transition: .2s;
 }
 
 .card-btn:hover {
@@ -373,32 +464,42 @@ a {
 }
 
 .digital-card .card-btn {
-    background: #078b85;
+    background: #3153a8;
 }
 
 .digital-card .card-btn:hover {
-    background: var(--blue);
+    background: var(--dark);
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    color: var(--muted);
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    margin-top: 15px;
 }
 
 /* ABOUT */
 
 .about {
-    margin: 5px 3% 25px;
-    padding: 28px 5%;
-    background: linear-gradient(110deg, #e3f5e9, #f5fbf5);
-    border: 1px solid #d3e8d8;
-    border-radius: 16px;
+    margin: 0 4% 35px;
+    padding: 35px 5%;
+    background: linear-gradient(110deg, #e7f4e9, #f7fbf5);
+    border: 1px solid #d8e9da;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
 .about-icon {
+    flex-shrink: 0;
     width: 85px;
     height: 85px;
-    flex-shrink: 0;
-    border: 2px solid var(--green);
     border-radius: 50%;
+    border: 2px solid var(--green);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -408,12 +509,12 @@ a {
 .about h2 {
     color: var(--dark);
     font-size: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 .about p {
-    color: #315447;
-    font-size: 15px;
+    color: #4b6256;
+    font-size: 14px;
 }
 
 /* FOOTER */
@@ -421,48 +522,60 @@ a {
 footer {
     background: var(--dark);
     color: white;
-    padding: 28px 5%;
+    padding: 35px 5% 20px;
     text-align: center;
     font-size: 13px;
 }
 
 footer p {
     max-width: 900px;
-    margin: 0 auto 12px;
+    margin: 0 auto 13px;
 }
 
-footer a {
-    color: #ffd36b;
-    font-weight: bold;
+footer strong {
+    color: #f5d78d;
 }
 
 .footer-links {
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 .footer-links a {
+    color: #f5d78d;
     margin: 0 10px;
+    display: inline-block;
 }
 
 .copyright {
     border-top: 1px solid rgba(255,255,255,.2);
-    padding-top: 15px;
+    padding-top: 16px;
     margin-top: 18px;
+    color: #d4e3dc;
 }
 
-/* RESPONSIVE DESIGN */
+/* TABLET */
 
 @media (max-width: 900px) {
-    .products-area {
-        grid-template-columns: 1fr;
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .hero-visual {
+    .hero-image {
         width: 35%;
+    }
+
+    .trust {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trust-item:nth-child(2) {
+        border-right: none;
     }
 }
 
-@media (max-width: 650px) {
+/* MOBILE */
+
+@media (max-width: 600px) {
     .topbar {
         justify-content: center;
         text-align: center;
@@ -471,7 +584,7 @@ footer a {
 
     .header {
         justify-content: center;
-        text-align: center;
+        padding: 12px 3%;
     }
 
     .brand {
@@ -479,7 +592,7 @@ footer a {
     }
 
     .brand h1 {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .nav {
@@ -487,43 +600,42 @@ footer a {
     }
 
     .nav a {
-        padding: 7px 10px;
-        font-size: 13px;
+        padding: 7px 9px;
+        font-size: 12px;
     }
 
     .hero {
-        padding: 42px 6%;
-        text-align: center;
         flex-direction: column;
-    }
-
-    .hero-content {
-        margin: auto;
+        text-align: center;
+        padding: 40px 6%;
     }
 
     .hero p {
         margin-left: auto;
         margin-right: auto;
+        font-size: 15px;
     }
 
     .hero-buttons {
         justify-content: center;
     }
 
-    .hero-visual {
+    .hero-image {
         width: 100%;
+        max-width: 420px;
     }
 
-    .hero-visual img {
-        height: 190px;
+    .hero-image img {
+        height: 200px;
     }
 
     .trust {
-        grid-template-columns: repeat(2, 1fr);
+        padding: 15px 3%;
     }
 
     .trust-item {
-        border-right: none;
+        justify-content: flex-start;
+        border: none;
     }
 
     .products-area {
@@ -532,21 +644,50 @@ footer a {
 
     .product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     .card-image {
-        height: 125px;
+        height: 130px;
+    }
+
+    .card-body {
+        padding: 11px;
+    }
+
+    .card h3 {
+        font-size: 15px;
+    }
+
+    .card p {
+        font-size: 12px;
+    }
+
+    .card-btn {
+        font-size: 12px;
+        padding: 9px 5px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
     }
 
     .about {
         flex-direction: column;
         text-align: center;
+        padding: 25px;
     }
 }
 
-@media (max-width: 380px) {
+/* SMALL PHONES */
+
+@media (max-width: 360px) {
     .product-grid {
         grid-template-columns: 1fr;
+    }
+
+    .card-image {
+        height: 180px;
     }
 }
 </style>
@@ -556,9 +697,9 @@ footer a {
 
 <!-- TOP BAR -->
 <div class="topbar">
-    <div>Smart Reviews &nbsp; | &nbsp; Trusted Guides &nbsp; | &nbsp; Better Choices</div>
+    <div>Smart Reviews | Useful Guides | Better Choices</div>
     <div>
-        <a href="https://www.facebook.com/WHF.shahid/" target="_blank">Facebook</a>
+        <a href="https://www.facebook.com/WHF.shahid/" target="_blank" rel="noopener">Facebook</a>
         <a href="blog.html">Blog</a>
     </div>
 </div>
@@ -589,56 +730,88 @@ footer a {
         <h2>Smart choices for your <span>health</span> and your <span>digital life</span></h2>
 
         <p>
-            Honest reviews and simple buying guides,
-            so you can decide with confidence before you spend.
+            Discover useful health products, digital tools and online guides.
+            Get clear information and make smarter buying decisions.
         </p>
 
         <div class="hero-buttons">
-            <a href="#health" class="hero-btn">Explore Health Products →</a>
-            <a href="#digital" class="hero-btn secondary">Explore Digital Products →</a>
+            <a href="#health" class="btn btn-green">Explore Health Products →</a>
+            <a href="#digital" class="btn btn-gold">Explore Digital Products →</a>
         </div>
     </div>
 
-    <div class="hero-visual">
+    <div class="hero-image">
         <img
-            src="https://images.unsplash.com/photo-1505576399270-565b52d4ac71?w=800"
-            alt="Healthy lifestyle and wellness">
+            src="https://images.unsplash.com/photo-1505576399270-565b52d4ac71?w=900"
+            alt="Healthy food and lifestyle">
     </div>
 </section>
+
+<!-- MOVING STRIP -->
+<div class="ticker">
+    <div class="ticker-track">
+        <span>🌿 HEALTH & WELLNESS</span>
+        Smart Buying Guides
+        <span>💻 DIGITAL TOOLS</span>
+        Useful Online Resources
+        <span>⭐ MAKE SMARTER CHOICES</span>
+        HealthDigitalPicks
+        <span>🌿 HEALTH & WELLNESS</span>
+        Smart Buying Guides
+        <span>💻 DIGITAL TOOLS</span>
+        Useful Online Resources
+        <span>⭐ MAKE SMARTER CHOICES</span>
+        HealthDigitalPicks
+    </div>
+</div>
 
 <!-- TRUST BAR -->
 <section class="trust">
     <div class="trust-item">
         <div class="trust-icon">🛡️</div>
         <div>
-            <strong>Trusted Reviews</strong>
-            <span>Honest & Unbiased</span>
+            <strong>Helpful Reviews</strong>
+            <small>Clear Information</small>
         </div>
     </div>
 
     <div class="trust-item">
-        <div class="trust-icon">⚖️</div>
+        <div class="trust-icon">🔎</div>
         <div>
-            <strong>Compare Easily</strong>
-            <span>Make Smart Choices</span>
+            <strong>Easy Discovery</strong>
+            <small>Explore Useful Products</small>
         </div>
     </div>
 
     <div class="trust-item">
         <div class="trust-icon">💚</div>
         <div>
-            <strong>Your Health First</strong>
-            <span>Live Better</span>
+            <strong>Health & Wellness</strong>
+            <small>Explore Healthy Living</small>
         </div>
     </div>
 
     <div class="trust-item">
         <div class="trust-icon">🚀</div>
         <div>
-            <strong>Digital Success</strong>
-            <span>Grow Your Skills</span>
+            <strong>Digital Learning</strong>
+            <small>Learn and Grow</small>
         </div>
     </div>
+</section>
+
+<!-- SEARCH BAR -->
+<section class="search-area">
+    <h2>Find What You Are Looking For</h2>
+    <div class="search-box">
+        <input
+            type="search"
+            id="productSearch"
+            placeholder="Search health products or digital tools..."
+            aria-label="Search products">
+        <button type="button" id="searchButton">Search</button>
+    </div>
+    <p id="searchMessage">Search by product name or keyword.</p>
 </section>
 
 <!-- PRODUCTS -->
@@ -649,50 +822,62 @@ footer a {
 
         <div class="section-heading">
             <h2>🌿 Health Products</h2>
-            <a href="#health" class="view-all">View All Health →</a>
+            <a href="#health" class="view-all">Explore Health →</a>
         </div>
 
         <p class="section-description">
-            Wellness and nutrition picks. Always read the official page before you buy.
+            Explore wellness, nutrition and healthy-living products.
+            Read the official information before making a purchase.
         </p>
 
         <div class="product-grid">
 
-            <article class="card">
+            <article class="card searchable-card" data-search="health gluco tonic glucotonic wellness supplement">
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500"
-                         alt="GlucoTonic">
+                    <img
+                        src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600"
+                        alt="GlucoTonic">
                 </div>
                 <div class="card-body">
                     <h3>GlucoTonic</h3>
-                    <p>A daily wellness supplement. Read the details on the official page before you decide.</p>
-                    <a href="https://www.digistore24.com/redir/660957/Kiani11/"
-                       class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
+                    <p>Explore this wellness supplement and read the product information on its official page.</p>
+                    <a
+                        href="https://www.digistore24.com/redir/660957/Kiani11/"
+                        class="card-btn"
+                        target="_blank"
+                        rel="noopener sponsored">View Details →</a>
                 </div>
             </article>
 
-            <article class="card">
+            <article class="card searchable-card" data-search="health smoothie diet official recipes nutrition">
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500"
-                         alt="The Official Smoothie Diet">
+                    <img
+                        src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600"
+                        alt="The Official Smoothie Diet">
                 </div>
                 <div class="card-body">
                     <h3>The Official Smoothie Diet</h3>
-                    <p>A 21-day smoothie program with ready recipes and a shopping list.</p>
-                    <a href="https://official.smoothiediet.com/#aff=Kiani11"
-                       class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
+                    <p>Explore a smoothie program with recipes and a shopping list.</p>
+                    <a
+                        href="https://official.smoothiediet.com/#aff=Kiani11"
+                        class="card-btn"
+                        target="_blank"
+                        rel="noopener sponsored">View Details →</a>
                 </div>
             </article>
 
-            <article class="card">
+            <article class="card searchable-card" data-search="health encyclopedia power foods nutrition food guide">
                 <div class="card-image">
                     <img src="GP8USY48.png" alt="The Encyclopedia of Power Foods">
                 </div>
                 <div class="card-body">
                     <h3>The Encyclopedia of Power Foods</h3>
-                    <p>A food guide that explains the nutritional value of everyday foods.</p>
-                    <a href="https://wsl.365dailyhealth.com/landing-sale-page1713272576177#aff=Kiani11"
-                       class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
+                    <p>A food guide to explore the nutritional value of everyday foods.</p>
+                    <a
+                        href="https://wsl.365dailyhealth.com/landing-sale-page1713272576177#aff=Kiani11"
+                        class="card-btn"
+                        target="_blank"
+                        rel="noopener sponsored">View Details →</a>
                 </div>
             </article>
 
@@ -704,68 +889,81 @@ footer a {
 
         <div class="section-heading digital">
             <h2>💻 Digital Products</h2>
-            <a href="#digital" class="view-all digital">View All Digital →</a>
+            <a href="#digital" class="view-all digital">Explore Digital →</a>
         </div>
 
         <p class="section-description">
-            Digital guides, courses and tools to help you learn and grow.
+            Discover digital guides, online courses and tools for learning and business.
         </p>
 
         <div class="product-grid">
 
-            <article class="card digital-card">
+            <article class="card digital-card searchable-card" data-search="digital google ads matze advertising marketing">
                 <div class="card-image">
-                    <img src="google-ads.png"
-                         alt="Google Ads with Matze"
-                         style="object-position: top;">
+                    <img src="google-ads.png" alt="Google Ads with Matze">
                 </div>
                 <div class="card-body">
                     <h3>Google Ads with Matze</h3>
-                    <p>A beginner-friendly guide to planning your first Google Ads search campaign.</p>
-                    <a href="https://einfachmitmatze.de/google-ads-search/#aff=Kiani11"
-                       class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
+                    <p>Explore a guide to Google Ads and search campaign basics.</p>
+                    <a
+                        href="https://einfachmitmatze.de/google-ads-search/#aff=Kiani11"
+                        class="card-btn"
+                        target="_blank"
+                        rel="noopener sponsored">View Details →</a>
                 </div>
             </article>
 
-            <article class="card digital-card">
+            <article class="card digital-card searchable-card" data-search="digital josephs well water system diy water from air">
                 <div class="card-image">
                     <img src="josephswell.jpg" alt="Joseph's Well">
                 </div>
                 <div class="card-body">
                     <h3>Joseph's Well</h3>
-                    <p>A digital DIY guide with videos and blueprints for a home water-from-air system.</p>
-                    <a href="https://uswaterrevolution.com/#aff=Kiani11"
-                       class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
+                    <p>Explore a DIY water-from-air project with guides and blueprints.</p>
+                    <a
+                        href="https://uswaterrevolution.com/#aff=Kiani11"
+                        class="card-btn"
+                        target="_blank"
+                        rel="noopener sponsored">View Details →</a>
                 </div>
             </article>
 
-            <article class="card digital-card">
+            <article class="card digital-card searchable-card" data-search="digital chatgpt prompts online marketing ai social media seo">
                 <div class="card-image">
-                    <img src="8G5IJ4GE.webp"
-                         alt="1000+ ChatGPT Prompts for Online Marketing">
+                    <img src="8G5IJ4GE.webp" alt="1000+ ChatGPT Prompts for Online Marketing">
                 </div>
                 <div class="card-body">
                     <h3>1000+ ChatGPT Prompts</h3>
-                    <p>Discover prompts for social media, SEO, email marketing, advertising and sales.</p>
-                    <a href="https://heikoboos.com/1000-chatgpt-prompts-for-online-marketing/#aff=Kiani11"
-                       class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
+                    <p>Explore prompts for marketing, social media, SEO and online business.</p>
+                    <a
+                        href="https://heikoboos.com/1000-chatgpt-prompts-for-online-marketing/#aff=Kiani11"
+                        class="card-btn"
+                        target="_blank"
+                        rel="noopener sponsored">View Details →</a>
                 </div>
             </article>
 
-            <article class="card digital-card">
+            <article class="card digital-card searchable-card" data-search="digital b2b sales masterclass business sales course">
                 <div class="card-image">
                     <img src="B2B.JPG" alt="B2B Sales Masterclass">
                 </div>
                 <div class="card-body">
                     <h3>B2B Sales Masterclass</h3>
-                    <p>Explore sales strategies, prospecting, negotiation, leadership and AI in sales.</p>
-                    <a href="https://www.checkout-ds24.com/redir/764294/Kiani11/"
-                       class="card-btn" target="_blank" rel="noopener sponsored">View Details →</a>
+                    <p>Explore sales strategies, prospecting and business development training.</p>
+                    <a
+                        href="https://www.checkout-ds24.com/redir/764294/Kiani11/"
+                        class="card-btn"
+                        target="_blank"
+                        rel="noopener sponsored">View Details →</a>
                 </div>
             </article>
 
         </div>
     </section>
+
+    <div class="no-results" id="noResults">
+        No matching products found. Try another search.
+    </div>
 
 </main>
 
@@ -775,42 +973,99 @@ footer a {
     <div>
         <h2>About HealthDigitalPicks</h2>
         <p>
-            We share honest product recommendations in health and digital tools.
-            Our goal is simple: provide clear information so you can make your own decision.
+            HealthDigitalPicks shares useful information, product recommendations
+            and guides in health and digital topics. Our aim is to help visitors
+            explore options and make informed decisions.
         </p>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+
     <p>
         <strong>Affiliate Disclosure:</strong>
-        Some links on this site are affiliate links. If you buy through them,
-        I may earn a commission at no extra cost to you.
+        Some links on this website are affiliate links. If you purchase through
+        these links, I may earn a commission at no additional cost to you.
     </p>
 
     <p>
         <strong>Health Disclaimer:</strong>
-        The information here is for general knowledge only and is not medical advice.
-        Talk to a doctor before starting any supplement or diet.
+        Content on this website is for general information only and is not medical
+        advice. Consult a qualified healthcare professional before making health
+        or supplement decisions.
     </p>
 
     <div class="footer-links">
         <a href="index.html">Home</a>
+        <a href="#health">Health</a>
+        <a href="#digital">Digital</a>
         <a href="blog.html">Blog</a>
         <a href="#about">About</a>
         <a href="mailto:shahidkiani1@gmail.com">Contact</a>
-        <a href="https://www.facebook.com/WHF.shahid/" target="_blank">Facebook</a>
+        <a href="https://www.facebook.com/WHF.shahid/" target="_blank" rel="noopener">Facebook</a>
     </div>
 
     <div class="copyright">
         © 2026 HealthDigitalPicks. All rights reserved.
     </div>
+
 </footer>
 
+<!-- PRODUCT SEARCH -->
+<script>
+const searchInput = document.getElementById("productSearch");
+const searchButton = document.getElementById("searchButton");
+const cards = document.querySelectorAll(".searchable-card");
+const noResults = document.getElementById("noResults");
+const searchMessage = document.getElementById("searchMessage");
+
+function searchProducts() {
+    const query = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    cards.forEach(function(card) {
+        const searchableText =
+            (card.innerText + " " + card.dataset.search).toLowerCase();
+
+        const matches = searchableText.includes(query);
+
+        card.style.display = matches ? "flex" : "none";
+
+        if (matches) {
+            visibleCount++;
+        }
+    });
+
+    noResults.style.display =
+        visibleCount === 0 ? "block" : "none";
+
+    if (query === "") {
+        searchMessage.textContent =
+            "Search by product name or keyword.";
+    } else {
+        searchMessage.textContent =
+            visibleCount + " product(s) found.";
+    }
+}
+
+searchButton.addEventListener("click", searchProducts);
+
+searchInput.addEventListener("input", searchProducts);
+
+searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        searchProducts();
+    }
+});
+</script>
+
 <!-- VISITOR COUNTER -->
-<script data-goatcounter="https://smartbuying.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script
+    data-goatcounter="https://smartbuying.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js">
+</script>
 
 </body>
 </html>
