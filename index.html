@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>HealthDigitalPicks | Health & Digital Products</title>
 <meta name="description" content="Discover health products, digital tools, online courses and useful guides with HealthDigitalPicks.">
 
@@ -16,21 +15,13 @@
     --gold:#dfa936;
     --text:#263b34;
     --muted:#718078;
-    --white:#fff;
     --bg:#f6f9f6;
     --border:#e1eae3;
 }
 
-* {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
-html {
-    scroll-behavior:smooth;
-    scroll-padding-top:100px;
-}
+html { scroll-behavior:smooth; scroll-padding-top:100px; }
 
 body {
     font-family:Arial,Helvetica,sans-serif;
@@ -39,25 +30,21 @@ body {
     line-height:1.6;
 }
 
-a {
-    text-decoration:none;
-}
+a { text-decoration:none; }
 
 /* TOP BAR */
-
 .topbar {
     background:var(--dark);
     color:white;
     text-align:center;
-    padding:8px 15px;
+    padding:9px 15px;
     font-size:13px;
 }
 
 /* HEADER */
-
 header {
     background:white;
-    padding:15px 6%;
+    padding:16px 6%;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -65,18 +52,17 @@ header {
     position:sticky;
     top:0;
     z-index:100;
-    box-shadow:0 3px 15px rgba(0,0,0,.06);
+    box-shadow:0 4px 18px rgba(0,0,0,.06);
 }
 
 .logo {
     color:var(--dark);
-    font-size:24px;
+    font-size:25px;
     font-weight:800;
+    white-space:nowrap;
 }
 
-.logo span {
-    color:var(--green);
-}
+.logo span { color:var(--green); }
 
 nav {
     display:flex;
@@ -88,34 +74,34 @@ nav a {
     color:var(--dark);
     font-size:14px;
     font-weight:bold;
+    transition:.3s;
 }
 
-nav a:hover {
-    color:var(--green);
-}
+nav a:hover { color:var(--green); }
 
 /* HERO SLIDER */
+.hero-wrap {
+    padding:25px 5% 15px;
+    background:linear-gradient(180deg,#f6f9f6,#edf5ef);
+}
 
 .hero-slider {
     position:relative;
-    min-height:470px;
-    max-width:1500px;
-    margin:25px auto;
+    max-width:1450px;
+    height:510px;
+    margin:auto;
     overflow:hidden;
-    background:#eaf5ee;
+    border-radius:24px;
+    background:var(--dark);
+    box-shadow:0 15px 40px rgba(18,59,53,.16);
 }
 
 .slide {
     position:absolute;
     inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:35px;
-    padding:55px 8%;
     opacity:0;
     visibility:hidden;
-    transition:opacity 1s ease, visibility 1s ease;
+    transition:opacity 1s ease,visibility 1s ease;
 }
 
 .slide.active {
@@ -124,82 +110,131 @@ nav a:hover {
     z-index:2;
 }
 
-.slide-content {
-    flex:1;
-    max-width:560px;
+.slide img {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transform:scale(1.05);
+    transition:transform 6s ease;
 }
 
-.slide-content .eyebrow {
-    color:var(--green);
+.slide.active img { transform:scale(1); }
+
+.slide::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(9,39,32,.94) 0%,
+        rgba(9,39,32,.82) 42%,
+        rgba(9,39,32,.35) 75%,
+        rgba(9,39,32,.10) 100%
+    );
+}
+
+.slide-content {
+    position:relative;
+    z-index:3;
+    max-width:650px;
+    padding:85px 8%;
+    color:white;
+}
+
+.eyebrow {
+    display:inline-block;
+    color:#f4c65d;
+    font-size:13px;
     font-weight:bold;
     text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:13px;
-    margin-bottom:12px;
+    letter-spacing:3px;
+    margin-bottom:18px;
 }
 
 .slide-content h1 {
-    font-size:clamp(32px,4.5vw,54px);
-    line-height:1.15;
-    color:var(--dark);
+    font-size:clamp(34px,5vw,60px);
+    line-height:1.12;
     margin-bottom:20px;
+    color:white;
 }
 
 .slide-content p {
     font-size:17px;
-    color:#52665d;
-    margin-bottom:28px;
+    color:#edf4ef;
+    max-width:510px;
+    margin-bottom:30px;
 }
 
 .slide-button {
     display:inline-block;
-    background:var(--green);
-    color:white;
-    padding:14px 27px;
+    background:var(--gold);
+    color:#173b30;
+    padding:14px 28px;
     border-radius:30px;
     font-weight:bold;
     transition:.3s;
 }
 
 .slide-button:hover {
-    background:var(--gold);
+    background:white;
     transform:translateY(-3px);
 }
 
-.slide img {
-    width:43%;
-    height:320px;
-    object-fit:contain;
-    border-radius:18px;
+/* SLIDER ARROWS */
+.slider-arrow {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:5;
+    width:48px;
+    height:48px;
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+    color:white;
+    font-size:27px;
+    cursor:pointer;
+    transition:.3s;
 }
 
+.slider-arrow:hover {
+    background:var(--gold);
+    color:var(--dark);
+}
+
+.slider-prev { left:20px; }
+.slider-next { right:20px; }
+
+/* DOTS */
 .slider-dots {
     position:absolute;
-    bottom:20px;
+    bottom:24px;
     left:50%;
     transform:translateX(-50%);
     display:flex;
     gap:10px;
-    z-index:5;
+    z-index:6;
 }
 
 .slider-dots button {
-    width:12px;
-    height:12px;
+    width:11px;
+    height:11px;
     border:0;
     border-radius:20px;
-    background:#a6b9ad;
+    background:rgba(255,255,255,.65);
     cursor:pointer;
     transition:.3s;
 }
 
 .slider-dots button.active {
-    width:30px;
-    background:var(--green);
+    width:32px;
+    background:var(--gold);
 }
 
-/* MOVING TICKER */
-
+/* TICKER */
 .ticker {
     background:var(--dark);
     color:white;
@@ -210,27 +245,27 @@ nav a:hover {
 
 .ticker-track {
     display:inline-block;
-    animation:tickerMove 25s linear infinite;
+    animation:tickerMove 28s linear infinite;
 }
 
 .ticker-track span {
     margin:0 35px;
     font-weight:bold;
+    font-size:14px;
 }
 
 @keyframes tickerMove {
-    from {transform:translateX(0)}
-    to {transform:translateX(-50%)}
+    from { transform:translateX(0); }
+    to { transform:translateX(-50%); }
 }
 
 /* TRUST BAR */
-
 .trust-bar {
     display:flex;
     justify-content:center;
     gap:35px;
     flex-wrap:wrap;
-    padding:24px 15px;
+    padding:25px 15px;
     background:white;
     color:var(--dark);
     font-size:14px;
@@ -238,20 +273,17 @@ nav a:hover {
 }
 
 /* SECTIONS */
-
-.section {
-    padding:65px 7%;
-}
+.section { padding:70px 7%; }
 
 .section-heading {
     text-align:center;
-    margin-bottom:35px;
+    margin-bottom:38px;
 }
 
 .section-heading h2 {
     color:var(--dark);
-    font-size:32px;
-    margin-bottom:10px;
+    font-size:33px;
+    margin-bottom:9px;
 }
 
 .section-heading p {
@@ -260,15 +292,14 @@ nav a:hover {
 }
 
 /* SEARCH */
-
 .search-area {
     max-width:550px;
-    margin:0 auto 35px;
+    margin:0 auto 38px;
 }
 
 .search-area input {
     width:100%;
-    padding:15px 20px;
+    padding:16px 22px;
     border:1px solid var(--border);
     border-radius:30px;
     font-size:15px;
@@ -278,21 +309,21 @@ nav a:hover {
 
 .search-area input:focus {
     border-color:var(--green);
+    box-shadow:0 0 0 3px rgba(22,134,91,.10);
 }
 
 .search-message {
     text-align:center;
     color:var(--muted);
     font-size:13px;
-    margin-top:8px;
+    margin-top:9px;
 }
 
 /* PRODUCT CARDS */
-
 .product-grid {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:25px;
+    gap:26px;
     max-width:1200px;
     margin:auto;
 }
@@ -300,35 +331,35 @@ nav a:hover {
 .product-card {
     background:white;
     border:1px solid var(--border);
-    border-radius:16px;
+    border-radius:18px;
     overflow:hidden;
     display:flex;
     flex-direction:column;
     transition:.3s;
-    box-shadow:0 5px 18px rgba(0,0,0,.04);
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
 }
 
 .product-card:hover {
     transform:translateY(-7px);
-    box-shadow:0 12px 28px rgba(0,0,0,.09);
+    box-shadow:0 14px 30px rgba(0,0,0,.10);
 }
 
 .product-card img {
     width:100%;
-    height:190px;
+    height:195px;
     object-fit:contain;
     padding:15px;
     background:#f3f8f4;
 }
 
 .product-info {
-    padding:20px;
+    padding:21px;
     display:flex;
     flex-direction:column;
     flex:1;
 }
 
-.product-info .category {
+.category {
     color:var(--green);
     font-size:12px;
     font-weight:bold;
@@ -339,13 +370,14 @@ nav a:hover {
 .product-info h3 {
     color:var(--dark);
     font-size:18px;
+    line-height:1.4;
     margin-bottom:10px;
 }
 
 .product-info p {
     color:var(--muted);
     font-size:14px;
-    margin-bottom:18px;
+    margin-bottom:20px;
     flex:1;
 }
 
@@ -353,19 +385,17 @@ nav a:hover {
     display:block;
     background:var(--green);
     color:white;
-    padding:11px 15px;
+    padding:12px 15px;
     text-align:center;
     border-radius:25px;
     font-weight:bold;
     font-size:14px;
+    transition:.3s;
 }
 
-.product-button:hover {
-    background:var(--gold);
-}
+.product-button:hover { background:var(--dark); }
 
 /* ABOUT */
-
 .about-section {
     background:var(--light);
     text-align:center;
@@ -378,40 +408,37 @@ nav a:hover {
 
 .about-content h2 {
     color:var(--dark);
-    font-size:30px;
-    margin-bottom:15px;
+    font-size:32px;
+    margin-bottom:16px;
 }
 
 .about-content p {
     color:#53665d;
-    margin-bottom:12px;
+    margin-bottom:13px;
 }
 
 /* FOOTER */
-
 footer {
     background:var(--dark);
     color:white;
-    padding:40px 7% 20px;
+    padding:45px 7% 20px;
     text-align:center;
 }
 
-footer h2 {
-    margin-bottom:12px;
-}
+footer h2 { margin-bottom:12px; }
 
 footer p {
     color:#d3e3da;
     font-size:14px;
-    margin-bottom:12px;
+    margin-bottom:13px;
 }
 
 .footer-links {
     display:flex;
     justify-content:center;
-    gap:22px;
+    gap:23px;
     flex-wrap:wrap;
-    margin:20px 0;
+    margin:22px 0;
 }
 
 .footer-links a {
@@ -419,61 +446,73 @@ footer p {
     font-size:14px;
 }
 
+.footer-links a:hover { color:var(--gold); }
+
 .copyright {
     border-top:1px solid rgba(255,255,255,.2);
     padding-top:18px;
-    margin-top:20px;
+    margin-top:22px;
     font-size:12px;
 }
 
 /* MOBILE */
-
 @media(max-width:750px) {
     header {
         flex-direction:column;
+        padding:14px 4%;
     }
 
     nav {
         justify-content:center;
-        gap:14px;
+        gap:13px 17px;
     }
 
-    .logo {
+    .logo { font-size:23px; }
+
+    .hero-wrap { padding:15px 3%; }
+
+    .hero-slider {
+        height:540px;
+        border-radius:17px;
+    }
+
+    .slide::after {
+        background:linear-gradient(
+            180deg,
+            rgba(9,39,32,.48) 0%,
+            rgba(9,39,32,.82) 48%,
+            rgba(9,39,32,.96) 100%
+        );
+    }
+
+    .slide-content {
+        padding:90px 30px 75px;
+        max-width:100%;
+    }
+
+    .slide-content h1 { font-size:36px; }
+    .slide-content p { font-size:15px; }
+
+    .slider-arrow {
+        width:38px;
+        height:38px;
         font-size:22px;
     }
 
-    .hero-slider {
-        min-height:570px;
-        margin:15px;
-    }
-
-    .slide {
-        flex-direction:column;
-        justify-content:center;
-        text-align:center;
-        padding:35px 22px 65px;
-        gap:18px;
-    }
-
-    .slide img {
-        width:85%;
-        height:220px;
-    }
-
-    .slide-content p {
-        font-size:15px;
-    }
+    .slider-prev { left:10px; }
+    .slider-next { right:10px; }
 
     .trust-bar {
         gap:15px;
         font-size:12px;
     }
 
-    .section {
-        padding:45px 5%;
-    }
-}
+    .section { padding:48px 5%; }
 
+    .section-heading h2 { font-size:27px; }
+
+    .product-grid { gap:20px; }
+}
 </style>
 </head>
 
@@ -497,67 +536,80 @@ footer p {
 </header>
 
 <!-- HERO SLIDER -->
-
-<section class="hero-slider">
+<div class="hero-wrap">
+<section class="hero-slider" aria-label="Featured content">
 
     <div class="slide active">
+        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1600"
+             alt="Fresh vegetables and healthy food">
         <div class="slide-content">
             <div class="eyebrow">Healthy Lifestyle</div>
             <h1>Healthy Living Starts Here</h1>
-            <p>Discover useful health products and simple ideas to support a healthier lifestyle.</p>
-            <a href="#health" class="slide-button">Explore Health Products</a>
+            <p>Discover useful health products, nutrition resources and simple ideas for your wellness journey.</p>
+            <a href="#health" class="slide-button">Explore Health Products →</a>
         </div>
-
-        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900" alt="Fresh vegetables and healthy food">
     </div>
 
     <div class="slide">
+        <img src="google-ads.png" alt="Google Ads digital marketing">
         <div class="slide-content">
             <div class="eyebrow">Digital Growth</div>
-            <h1>Grow Your Digital Skills</h1>
-            <p>Explore digital tools, online courses and practical resources for your online journey.</p>
-            <a href="#digital" class="slide-button">Explore Digital Products</a>
+            <h1>Build Your Digital Skills</h1>
+            <p>Discover online learning resources, marketing tools and useful ideas to grow your digital knowledge.</p>
+            <a href="#digital" class="slide-button">Explore Digital Products →</a>
         </div>
-
-        <img src="google-ads.png" alt="Google Ads digital marketing">
     </div>
 
     <div class="slide">
-        <div class="slide-content">
-            <div class="eyebrow">Smart Online Tools</div>
-            <h1>Discover Smarter Online Tools</h1>
-            <p>Find useful AI prompts and resources to improve your productivity and marketing.</p>
-            <a href="#digital" class="slide-button">Discover Products</a>
-        </div>
-
         <img src="8G5IJ4GE.webp" alt="ChatGPT marketing prompts">
+        <div class="slide-content">
+            <div class="eyebrow">AI & Smart Tools</div>
+            <h1>Work Smarter With AI</h1>
+            <p>Explore AI prompts and digital resources that can help with creativity, learning and productivity.</p>
+            <a href="#digital" class="slide-button">Discover AI Resources →</a>
+        </div>
     </div>
 
+    <div class="slide">
+        <img src="josephswell.jpg" alt="Joseph's Well product">
+        <div class="slide-content">
+            <div class="eyebrow">Explore Useful Resources</div>
+            <h1>Discover Something Useful</h1>
+            <p>Browse interesting products and online resources selected for curious minds.</p>
+            <a href="#digital" class="slide-button">View All Products →</a>
+        </div>
+    </div>
+
+    <button class="slider-arrow slider-prev" type="button" aria-label="Previous slide">&#10094;</button>
+    <button class="slider-arrow slider-next" type="button" aria-label="Next slide">&#10095;</button>
+
     <div class="slider-dots">
-        <button class="active" aria-label="Slide 1" onclick="showSlide(0)"></button>
-        <button aria-label="Slide 2" onclick="showSlide(1)"></button>
-        <button aria-label="Slide 3" onclick="showSlide(2)"></button>
+        <button class="active" type="button" aria-label="Slide 1"></button>
+        <button type="button" aria-label="Slide 2"></button>
+        <button type="button" aria-label="Slide 3"></button>
+        <button type="button" aria-label="Slide 4"></button>
     </div>
 
 </section>
+</div>
 
 <!-- TICKER -->
-
 <div class="ticker">
     <div class="ticker-track">
         <span>Healthy Living</span>
         <span>Digital Products</span>
         <span>Online Learning</span>
         <span>Smart Tools</span>
+        <span>AI Resources</span>
         <span>Healthy Living</span>
         <span>Digital Products</span>
         <span>Online Learning</span>
         <span>Smart Tools</span>
+        <span>AI Resources</span>
     </div>
 </div>
 
 <!-- TRUST BAR -->
-
 <div class="trust-bar">
     <span>✓ Useful Resources</span>
     <span>✓ Health & Wellness</span>
@@ -566,9 +618,7 @@ footer p {
 </div>
 
 <!-- HEALTH PRODUCTS -->
-
 <section class="section" id="health">
-
     <div class="section-heading">
         <h2>Health & Wellness</h2>
         <p>Explore products and resources for your health journey.</p>
@@ -576,7 +626,7 @@ footer p {
 
     <div class="product-grid">
 
-        <div class="product-card searchable-card" data-search="glucotonic glucose health wellness">
+        <div class="product-card">
             <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600" alt="GlucoTonic">
             <div class="product-info">
                 <span class="category">Health</span>
@@ -586,7 +636,7 @@ footer p {
             </div>
         </div>
 
-        <div class="product-card searchable-card" data-search="official smoothie diet healthy food diet">
+        <div class="product-card">
             <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600" alt="Smoothie Diet">
             <div class="product-info">
                 <span class="category">Health</span>
@@ -596,7 +646,7 @@ footer p {
             </div>
         </div>
 
-        <div class="product-card searchable-card" data-search="encyclopedia power foods nutrition health">
+        <div class="product-card">
             <img src="GP8USY48.png" alt="The Encyclopedia of Power Foods">
             <div class="product-info">
                 <span class="category">Health</span>
@@ -607,20 +657,17 @@ footer p {
         </div>
 
     </div>
-
 </section>
 
 <!-- DIGITAL PRODUCTS -->
-
 <section class="section" id="digital" style="background:#edf5ef;">
-
     <div class="section-heading">
         <h2>Digital Products & Online Tools</h2>
         <p>Explore digital resources, marketing tools and online learning.</p>
     </div>
 
     <div class="search-area">
-        <input type="text" id="productSearch" placeholder="Search products by name or keyword...">
+        <input type="text" id="productSearch" placeholder="Search products by name or keyword..." aria-label="Search digital products">
         <div class="search-message" id="searchMessage">Search by product name or keyword.</div>
     </div>
 
@@ -667,31 +714,21 @@ footer p {
         </div>
 
     </div>
-
 </section>
 
 <!-- ABOUT -->
-
 <section class="section about-section" id="about">
-
     <div class="about-content">
         <h2>About HealthDigitalPicks</h2>
-
         <p>Welcome to HealthDigitalPicks. Our goal is to share useful health resources, digital products, online tools and learning opportunities.</p>
-
         <p>We aim to help visitors discover resources that may support their personal interests, learning and online journey.</p>
-
         <p>Explore our products and blog to discover more useful information.</p>
     </div>
-
 </section>
 
 <!-- FOOTER -->
-
 <footer id="contact">
-
     <h2>HealthDigitalPicks</h2>
-
     <p>Discover Health, Digital Products & Useful Online Resources.</p>
 
     <div class="footer-links">
@@ -704,23 +741,20 @@ footer p {
     </div>
 
     <p>Affiliate Disclosure: Some links on this website are affiliate links. We may earn a commission if you make a purchase through them, at no extra cost to you.</p>
-
     <p>Health Disclaimer: Information on this website is for general informational purposes and is not a substitute for professional medical advice.</p>
 
     <div class="copyright">
         © 2026 HealthDigitalPicks. All Rights Reserved.
     </div>
-
 </footer>
 
-<!-- JAVASCRIPT -->
-
 <script>
-
-// HERO SLIDER
+/* HERO SLIDER */
 
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".slider-dots button");
+const previousButton = document.querySelector(".slider-prev");
+const nextButton = document.querySelector(".slider-next");
 
 let currentSlide = 0;
 let sliderTimer;
@@ -729,7 +763,7 @@ function showSlide(index) {
     slides[currentSlide].classList.remove("active");
     dots[currentSlide].classList.remove("active");
 
-    currentSlide = index;
+    currentSlide = (index + slides.length) % slides.length;
 
     slides[currentSlide].classList.add("active");
     dots[currentSlide].classList.add("active");
@@ -738,7 +772,11 @@ function showSlide(index) {
 }
 
 function nextSlide() {
-    showSlide((currentSlide + 1) % slides.length);
+    showSlide(currentSlide + 1);
+}
+
+function previousSlide() {
+    showSlide(currentSlide - 1);
 }
 
 function restartSlider() {
@@ -746,25 +784,37 @@ function restartSlider() {
     sliderTimer = setInterval(nextSlide, 5000);
 }
 
+nextButton.addEventListener("click", nextSlide);
+previousButton.addEventListener("click", previousSlide);
+
+dots.forEach(function(dot, index) {
+    dot.addEventListener("click", function() {
+        showSlide(index);
+    });
+});
+
+document.querySelector(".hero-slider").addEventListener("mouseenter", function() {
+    clearInterval(sliderTimer);
+});
+
+document.querySelector(".hero-slider").addEventListener("mouseleave", function() {
+    restartSlider();
+});
+
 restartSlider();
 
-// PRODUCT SEARCH
+/* PRODUCT SEARCH */
 
 const searchInput = document.getElementById("productSearch");
 const searchMessage = document.getElementById("searchMessage");
 const productCards = document.querySelectorAll("#digitalProducts .searchable-card");
 
 function searchProducts() {
-
     const query = searchInput.value.toLowerCase().trim();
     let visibleCount = 0;
 
     productCards.forEach(function(card) {
-
-        const text = (
-            card.innerText + " " + card.dataset.search
-        ).toLowerCase();
-
+        const text = (card.innerText + " " + card.dataset.search).toLowerCase();
         const matches = text.includes(query);
 
         card.style.display = matches ? "flex" : "none";
@@ -772,27 +822,16 @@ function searchProducts() {
         if (matches) {
             visibleCount++;
         }
-
     });
 
     if (query === "") {
-        searchMessage.textContent =
-            "Search by product name or keyword.";
+        searchMessage.textContent = "Search by product name or keyword.";
     } else {
-        searchMessage.textContent =
-            visibleCount + " product(s) found.";
+        searchMessage.textContent = visibleCount + " product(s) found.";
     }
-
 }
 
 searchInput.addEventListener("input", searchProducts);
-
-searchInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        searchProducts();
-    }
-});
-
 </script>
 
 </body>
