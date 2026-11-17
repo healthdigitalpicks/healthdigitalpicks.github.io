@@ -4,747 +4,1245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HealthDigitalPicks | Health & Digital Products</title>
-<meta name="description" content="Discover health products, digital tools, online courses and useful guides with HealthDigitalPicks.">
+
+<title>HealthDigitalPicks | Health, Wellness & Digital Products</title>
+<meta name="description" content="Explore hand-picked health, wellness and digital products with HealthDigitalPicks.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --dark:#123b35;
-    --green:#16865b;
-    --light:#eaf5ee;
-    --gold:#dfa936;
-    --text:#263b34;
-    --muted:#718078;
-    --bg:#f6f9f6;
-    --border:#e1eae3;
+    --green: #174d3c;
+    --green-dark: #10382d;
+    --green-light: #e9f0e9;
+    --cream: #f8f6ef;
+    --gold: #c5a15b;
+    --gold-light: #e4d2a9;
+    --text: #26352e;
+    --muted: #718078;
+    --white: #ffffff;
+    --border: #e8e8df;
+    --shadow: 0 12px 35px rgba(23,77,60,.09);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-html { scroll-behavior:smooth; scroll-padding-top:100px; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family:Arial,Helvetica,sans-serif;
-    color:var(--text);
-    background:var(--bg);
-    line-height:1.6;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
 }
 
-a { text-decoration:none; }
+a {
+    text-decoration: none;
+}
 
-/* TOP BAR */
-.topbar {
-    background:var(--dark);
-    color:white;
-    text-align:center;
-    padding:9px 15px;
-    font-size:13px;
+/* TOP ANNOUNCEMENT */
+
+.announcement {
+    background: var(--green-dark);
+    color: #f8f6ef;
+    text-align: center;
+    padding: 9px 15px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
 }
 
 /* HEADER */
+
 header {
-    background:white;
-    padding:16px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-    position:sticky;
-    top:0;
-    z-index:100;
-    box-shadow:0 4px 18px rgba(0,0,0,.06);
+    background: rgba(248,246,239,.97);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+    padding: 17px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
 .logo {
-    color:var(--dark);
-    font-size:25px;
-    font-weight:800;
-    white-space:nowrap;
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
 }
 
-.logo span { color:var(--green); }
-
-nav {
-    display:flex;
-    gap:22px;
-    flex-wrap:wrap;
+.logo span {
+    color: var(--gold);
 }
 
-nav a {
-    color:var(--dark);
-    font-size:14px;
-    font-weight:bold;
-    transition:.3s;
+.logo small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: 5px;
 }
 
-nav a:hover { color:var(--green); }
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-cta {
+    background: var(--green);
+    color: white !important;
+    padding: 11px 19px;
+    border-radius: 3px;
+}
+
+.nav-cta:hover {
+    background: var(--gold);
+}
 
 /* HERO SLIDER */
-.hero-wrap {
-    padding:25px 5% 15px;
-    background:linear-gradient(180deg,#f6f9f6,#edf5ef);
-}
 
-.hero-slider {
-    position:relative;
-    max-width:1450px;
-    height:510px;
-    margin:auto;
-    overflow:hidden;
-    border-radius:24px;
-    background:var(--dark);
-    box-shadow:0 15px 40px rgba(18,59,53,.16);
+.hero {
+    position: relative;
+    min-height: 590px;
+    overflow: hidden;
+    background: var(--green-dark);
 }
 
 .slide {
-    position:absolute;
-    inset:0;
-    opacity:0;
-    visibility:hidden;
-    transition:opacity 1s ease,visibility 1s ease;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
 }
 
 .slide.active {
-    opacity:1;
-    visibility:visible;
-    z-index:2;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
 }
 
-.slide img {
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    transform:scale(1.05);
-    transition:transform 6s ease;
-}
-
-.slide.active img { transform:scale(1); }
-
-.slide::after {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
         90deg,
-        rgba(9,39,32,.94) 0%,
-        rgba(9,39,32,.82) 42%,
-        rgba(9,39,32,.35) 75%,
-        rgba(9,39,32,.10) 100%
+        rgba(12,43,33,.90) 0%,
+        rgba(15,55,42,.76) 48%,
+        rgba(15,55,42,.16) 100%
     );
 }
 
 .slide-content {
-    position:relative;
-    z-index:3;
-    max-width:650px;
-    padding:85px 8%;
-    color:white;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 80px 55px;
+    color: white;
+    animation: slideUp .9s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .eyebrow {
-    display:inline-block;
-    color:#f4c65d;
-    font-size:13px;
-    font-weight:bold;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    margin-bottom:18px;
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .slide-content h1 {
-    font-size:clamp(34px,5vw,60px);
-    line-height:1.12;
-    margin-bottom:20px;
-    color:white;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.12;
+    max-width: 700px;
+    margin-bottom: 22px;
 }
 
 .slide-content p {
-    font-size:17px;
-    color:#edf4ef;
-    max-width:510px;
-    margin-bottom:30px;
+    color: #e4e9e3;
+    font-size: 16px;
+    max-width: 540px;
+    margin-bottom: 32px;
 }
 
-.slide-button {
-    display:inline-block;
-    background:var(--gold);
-    color:#173b30;
-    padding:14px 28px;
-    border-radius:30px;
-    font-weight:bold;
-    transition:.3s;
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
 }
 
-.slide-button:hover {
-    background:white;
-    transform:translateY(-3px);
+.btn-gold, .btn-outline {
+    display: inline-block;
+    padding: 14px 25px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: .3s;
 }
 
-/* SLIDER ARROWS */
+.btn-gold {
+    background: var(--gold);
+    color: var(--green-dark);
+    border: 1px solid var(--gold);
+}
+
+.btn-gold:hover {
+    background: white;
+    border-color: white;
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.75);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--green);
+}
+
 .slider-arrow {
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    z-index:5;
-    width:48px;
-    height:48px;
-    border:1px solid rgba(255,255,255,.45);
-    border-radius:50%;
-    background:rgba(255,255,255,.18);
-    color:white;
-    font-size:27px;
-    cursor:pointer;
-    transition:.3s;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255,255,255,.55);
+    background: rgba(255,255,255,.12);
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .3s;
 }
 
 .slider-arrow:hover {
-    background:var(--gold);
-    color:var(--dark);
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--green-dark);
 }
 
-.slider-prev { left:20px; }
-.slider-next { right:20px; }
+.prev { left: 22px; }
+.next { right: 22px; }
 
-/* DOTS */
 .slider-dots {
-    position:absolute;
-    bottom:24px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:10px;
-    z-index:6;
+    position: absolute;
+    z-index: 5;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
 }
 
-.slider-dots button {
-    width:11px;
-    height:11px;
-    border:0;
-    border-radius:20px;
-    background:rgba(255,255,255,.65);
-    cursor:pointer;
-    transition:.3s;
+.dot {
+    width: 9px;
+    height: 9px;
+    border: 0;
+    border-radius: 50px;
+    background: rgba(255,255,255,.5);
+    cursor: pointer;
+    transition: .3s;
 }
 
-.slider-dots button.active {
-    width:32px;
-    background:var(--gold);
+.dot.active {
+    width: 30px;
+    background: var(--gold);
 }
 
-/* TICKER */
-.ticker {
-    background:var(--dark);
-    color:white;
-    overflow:hidden;
-    padding:12px 0;
-    white-space:nowrap;
+/* INTRO STRIP */
+
+.intro-strip {
+    background: var(--white);
+    padding: 27px 20px;
+    border-bottom: 1px solid var(--border);
 }
 
-.ticker-track {
-    display:inline-block;
-    animation:tickerMove 28s linear infinite;
+.intro-inner {
+    max-width: 1120px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    text-align: center;
 }
 
-.ticker-track span {
-    margin:0 35px;
-    font-weight:bold;
-    font-size:14px;
+.intro-item {
+    padding: 7px 12px;
+    border-right: 1px solid var(--border);
 }
 
-@keyframes tickerMove {
-    from { transform:translateX(0); }
-    to { transform:translateX(-50%); }
+.intro-item:last-child {
+    border: 0;
 }
 
-/* TRUST BAR */
-.trust-bar {
-    display:flex;
-    justify-content:center;
-    gap:35px;
-    flex-wrap:wrap;
-    padding:25px 15px;
-    background:white;
-    color:var(--dark);
-    font-size:14px;
-    font-weight:bold;
+.intro-icon {
+    color: var(--gold);
+    font-size: 24px;
+    margin-bottom: 5px;
 }
 
-/* SECTIONS */
-.section { padding:70px 7%; }
+.intro-item strong {
+    display: block;
+    color: var(--green);
+    font-size: 14px;
+}
+
+.intro-item span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    max-width: 1250px;
+    margin: auto;
+    padding: 85px 25px;
+}
 
 .section-heading {
-    text-align:center;
-    margin-bottom:38px;
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section-heading .eyebrow {
+    color: var(--gold);
+    margin-bottom: 9px;
 }
 
 .section-heading h2 {
-    color:var(--dark);
-    font-size:33px;
-    margin-bottom:9px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(31px,4vw,44px);
+    color: var(--green);
+    line-height: 1.2;
 }
 
 .section-heading p {
-    color:var(--muted);
-    font-size:15px;
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 12px;
 }
 
-/* SEARCH */
-.search-area {
-    max-width:550px;
-    margin:0 auto 38px;
+/* CATEGORY TILES */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
 }
 
-.search-area input {
-    width:100%;
-    padding:16px 22px;
-    border:1px solid var(--border);
-    border-radius:30px;
-    font-size:15px;
-    outline:none;
-    background:white;
+.category-card {
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    background-size: cover;
+    background-position: center;
 }
 
-.search-area input:focus {
-    border-color:var(--green);
-    box-shadow:0 0 0 3px rgba(22,134,91,.10);
+.category-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg,rgba(10,37,28,.88),transparent 75%);
+    transition: .4s;
 }
 
-.search-message {
-    text-align:center;
-    color:var(--muted);
-    font-size:13px;
-    margin-top:9px;
+.category-card:hover::before {
+    background: linear-gradient(0deg,rgba(10,37,28,.95),rgba(10,37,28,.12));
 }
 
-/* PRODUCT CARDS */
+.category-content {
+    position: relative;
+    padding: 30px;
+    color: white;
+}
+
+.category-content span {
+    color: var(--gold-light);
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.category-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin: 5px 0 12px;
+}
+
+.category-content a {
+    display: inline-block;
+    color: white;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* PRODUCT SECTION */
+
+.products-section {
+    background: #fff;
+}
+
 .product-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:26px;
-    max-width:1200px;
-    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
 }
 
 .product-card {
-    background:white;
-    border:1px solid var(--border);
-    border-radius:18px;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    transition:.3s;
-    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    background: white;
+    border: 1px solid var(--border);
+    transition: .35s;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
-    transform:translateY(-7px);
-    box-shadow:0 14px 30px rgba(0,0,0,.10);
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+    border-color: var(--gold-light);
 }
 
-.product-card img {
-    width:100%;
-    height:195px;
-    object-fit:contain;
-    padding:15px;
-    background:#f3f8f4;
+.product-image {
+    height: 270px;
+    background: var(--cream);
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+.product-label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--green);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 7px 12px;
+    text-transform: uppercase;
 }
 
 .product-info {
-    padding:21px;
-    display:flex;
-    flex-direction:column;
-    flex:1;
-}
-
-.category {
-    color:var(--green);
-    font-size:12px;
-    font-weight:bold;
-    text-transform:uppercase;
-    margin-bottom:8px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .product-info h3 {
-    color:var(--dark);
-    font-size:18px;
-    line-height:1.4;
-    margin-bottom:10px;
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 10px;
 }
 
 .product-info p {
-    color:var(--muted);
-    font-size:14px;
-    margin-bottom:20px;
-    flex:1;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+    flex: 1;
 }
 
 .product-button {
-    display:block;
-    background:var(--green);
-    color:white;
-    padding:12px 15px;
-    text-align:center;
-    border-radius:25px;
-    font-weight:bold;
-    font-size:14px;
-    transition:.3s;
+    display: block;
+    text-align: center;
+    background: var(--green);
+    color: white;
+    padding: 13px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: .3s;
 }
 
-.product-button:hover { background:var(--dark); }
+.product-button:hover {
+    background: var(--gold);
+    color: var(--green-dark);
+}
+
+/* DIGITAL SECTION */
+
+.digital-section {
+    background: var(--cream);
+}
+
+.digital-section .product-image {
+    background: #eeeae0;
+}
+
+.digital-section .product-label {
+    background: var(--gold);
+    color: var(--green-dark);
+}
+
+.digital-section .product-button {
+    background: var(--gold);
+    color: var(--green-dark);
+}
+
+.digital-section .product-button:hover {
+    background: var(--green);
+    color: white;
+}
+
+/* SEARCH */
+
+.search-area {
+    max-width: 550px;
+    margin: 0 auto 35px;
+    display: flex;
+    border: 1px solid var(--border);
+    background: white;
+}
+
+.search-area input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.search-area button {
+    background: var(--green);
+    border: 0;
+    color: white;
+    padding: 0 22px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    color: var(--muted);
+    padding: 25px;
+}
 
 /* ABOUT */
+
 .about-section {
-    background:var(--light);
-    text-align:center;
+    background: var(--green);
+    color: white;
+    padding: 80px 25px;
 }
 
-.about-content {
-    max-width:800px;
-    margin:auto;
+.about-inner {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
 }
 
-.about-content h2 {
-    color:var(--dark);
-    font-size:32px;
-    margin-bottom:16px;
+.about-inner .eyebrow {
+    color: var(--gold-light);
 }
 
-.about-content p {
-    color:#53665d;
-    margin-bottom:13px;
+.about-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px,4vw,43px);
+    margin-bottom: 18px;
+}
+
+.about-inner p {
+    color: #dce8df;
+    max-width: 720px;
+    margin: auto;
+    font-size: 14px;
+}
+
+/* NEWSLETTER STYLE CTA */
+
+.bottom-cta {
+    text-align: center;
+    padding: 65px 20px;
+    background: #eee9dc;
+}
+
+.bottom-cta h2 {
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.bottom-cta p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.bottom-cta a {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 13px 25px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 /* FOOTER */
+
 footer {
-    background:var(--dark);
-    color:white;
-    padding:45px 7% 20px;
-    text-align:center;
+    background: var(--green-dark);
+    color: #dce6df;
+    padding: 55px 25px 22px;
 }
 
-footer h2 { margin-bottom:12px; }
-
-footer p {
-    color:#d3e3da;
-    font-size:14px;
-    margin-bottom:13px;
+.footer-inner {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 35px;
 }
 
-.footer-links {
-    display:flex;
-    justify-content:center;
-    gap:23px;
-    flex-wrap:wrap;
-    margin:22px 0;
+.footer-logo {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 13px;
 }
 
-.footer-links a {
-    color:white;
-    font-size:14px;
+.footer-logo span {
+    color: var(--gold);
 }
 
-.footer-links a:hover { color:var(--gold); }
-
-.copyright {
-    border-top:1px solid rgba(255,255,255,.2);
-    padding-top:18px;
-    margin-top:22px;
-    font-size:12px;
+.footer-about p {
+    color: #b9c9c0;
+    font-size: 13px;
+    max-width: 340px;
 }
 
-/* MOBILE */
-@media(max-width:750px) {
-    header {
-        flex-direction:column;
-        padding:14px 4%;
+.footer-column h3 {
+    color: var(--gold-light);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-column a {
+    display: block;
+    color: #dce6df;
+    font-size: 13px;
+    margin: 9px 0;
+}
+
+.footer-column a:hover {
+    color: var(--gold-light);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 20px;
+    text-align: center;
+    color: #aebeb5;
+    font-size: 11px;
+}
+
+.disclosure {
+    max-width: 900px;
+    margin: 0 auto 15px;
+    line-height: 1.7;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    nav {
-        justify-content:center;
-        gap:13px 17px;
+    .nav-links {
+        gap: 17px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .logo { font-size:23px; }
-
-    .hero-wrap { padding:15px 3%; }
-
-    .hero-slider {
-        height:540px;
-        border-radius:17px;
+    .product-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .slide::after {
-        background:linear-gradient(
-            180deg,
-            rgba(9,39,32,.48) 0%,
-            rgba(9,39,32,.82) 48%,
-            rgba(9,39,32,.96) 100%
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+}
+
+@media(max-width:600px) {
+    .announcement {
+        font-size: 10px;
+    }
+
+    .navbar {
+        padding: 14px 12px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        gap: 12px 17px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-cta {
+        padding: 8px 12px;
+    }
+
+    .hero {
+        min-height: 570px;
+    }
+
+    .slide {
+        background-position: 62% center;
+    }
+
+    .slide::before {
+        background: linear-gradient(
+            90deg,
+            rgba(12,43,33,.88),
+            rgba(12,43,33,.62)
         );
     }
 
     .slide-content {
-        padding:90px 30px 75px;
-        max-width:100%;
+        padding: 65px 35px;
     }
 
-    .slide-content h1 { font-size:36px; }
-    .slide-content p { font-size:15px; }
+    .slide-content h1 {
+        font-size: 43px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+    }
 
     .slider-arrow {
-        width:38px;
-        height:38px;
-        font-size:22px;
+        width: 34px;
+        height: 34px;
+        font-size: 19px;
     }
 
-    .slider-prev { left:10px; }
-    .slider-next { right:10px; }
+    .prev { left: 8px; }
+    .next { right: 8px; }
 
-    .trust-bar {
-        gap:15px;
-        font-size:12px;
+    .intro-inner {
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 
-    .section { padding:48px 5%; }
+    .intro-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+        padding: 12px;
+    }
 
-    .section-heading h2 { font-size:27px; }
+    .intro-item:last-child {
+        border-bottom: 0;
+    }
 
-    .product-grid { gap:20px; }
+    .section {
+        padding: 60px 16px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        min-height: 260px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-image {
+        height: 260px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-    Welcome to HealthDigitalPicks | Discover Better Choices
+<div class="announcement">
+    THOUGHTFUL PICKS FOR A HEALTHIER, SMARTER LIFESTYLE
 </div>
 
 <header>
-    <a href="index.html" class="logo">Health<span>Digital</span>Picks</a>
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        HealthDigital<span>Picks</span>
+        <small>HEALTH • WELLNESS • DIGITAL</small>
+    </a>
 
-    <nav>
+    <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="#health">Health</a>
         <a href="#digital">Digital</a>
         <a href="blog.html">Blog</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <a href="#contact" class="nav-cta">Explore</a>
+    </div>
+</nav>
 </header>
 
 <!-- HERO SLIDER -->
-<div class="hero-wrap">
-<section class="hero-slider" aria-label="Featured content">
 
-    <div class="slide active">
-        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1600"
-             alt="Fresh vegetables and healthy food">
+<section class="hero">
+
+    <div class="slide active"
+         style="background-image:url('https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1600');">
         <div class="slide-content">
-            <div class="eyebrow">Healthy Lifestyle</div>
-            <h1>Healthy Living Starts Here</h1>
-            <p>Discover useful health products, nutrition resources and simple ideas for your wellness journey.</p>
-            <a href="#health" class="slide-button">Explore Health Products →</a>
+            <div class="eyebrow">Welcome to HealthDigitalPicks</div>
+            <h1>Discover a Better Way to Live</h1>
+            <p>
+                Explore thoughtful health and wellness picks,
+                useful digital tools and guides designed to
+                inspire smarter everyday choices.
+            </p>
+            <div class="hero-buttons">
+                <a href="#health" class="btn-gold">Explore Health</a>
+                <a href="#digital" class="btn-outline">Discover Digital</a>
+            </div>
         </div>
     </div>
 
-    <div class="slide">
-        <img src="google-ads.png" alt="Google Ads digital marketing">
+    <div class="slide"
+         style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600');">
         <div class="slide-content">
-            <div class="eyebrow">Digital Growth</div>
-            <h1>Build Your Digital Skills</h1>
-            <p>Discover online learning resources, marketing tools and useful ideas to grow your digital knowledge.</p>
-            <a href="#digital" class="slide-button">Explore Digital Products →</a>
+            <div class="eyebrow">Wellness Starts with Choices</div>
+            <h1>Make Your Wellbeing a Priority</h1>
+            <p>
+                Discover wellness products, nutrition guides
+                and useful ideas to support your journey
+                towards a healthier lifestyle.
+            </p>
+            <div class="hero-buttons">
+                <a href="#health" class="btn-gold">Explore Products</a>
+                <a href="blog.html" class="btn-outline">Read Our Blog</a>
+            </div>
         </div>
     </div>
 
-    <div class="slide">
-        <img src="8G5IJ4GE.webp" alt="ChatGPT marketing prompts">
+    <div class="slide"
+         style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600');">
         <div class="slide-content">
-            <div class="eyebrow">AI & Smart Tools</div>
-            <h1>Work Smarter With AI</h1>
-            <p>Explore AI prompts and digital resources that can help with creativity, learning and productivity.</p>
-            <a href="#digital" class="slide-button">Discover AI Resources →</a>
+            <div class="eyebrow">Tools for Your Digital Journey</div>
+            <h1>Ideas That Move You Forward</h1>
+            <p>
+                Explore digital learning resources, marketing
+                guides and practical tools for your online journey.
+            </p>
+            <div class="hero-buttons">
+                <a href="#digital" class="btn-gold">Explore Digital</a>
+                <a href="blog.html" class="btn-outline">Learn More</a>
+            </div>
         </div>
     </div>
 
-    <div class="slide">
-        <img src="josephswell.jpg" alt="Joseph's Well product">
-        <div class="slide-content">
-            <div class="eyebrow">Explore Useful Resources</div>
-            <h1>Discover Something Useful</h1>
-            <p>Browse interesting products and online resources selected for curious minds.</p>
-            <a href="#digital" class="slide-button">View All Products →</a>
-        </div>
-    </div>
-
-    <button class="slider-arrow slider-prev" type="button" aria-label="Previous slide">&#10094;</button>
-    <button class="slider-arrow slider-next" type="button" aria-label="Next slide">&#10095;</button>
+    <button class="slider-arrow prev" aria-label="Previous slide">&#8249;</button>
+    <button class="slider-arrow next" aria-label="Next slide">&#8250;</button>
 
     <div class="slider-dots">
-        <button class="active" type="button" aria-label="Slide 1"></button>
-        <button type="button" aria-label="Slide 2"></button>
-        <button type="button" aria-label="Slide 3"></button>
-        <button type="button" aria-label="Slide 4"></button>
+        <button class="dot active" aria-label="Slide 1"></button>
+        <button class="dot" aria-label="Slide 2"></button>
+        <button class="dot" aria-label="Slide 3"></button>
     </div>
-
 </section>
-</div>
 
-<!-- TICKER -->
-<div class="ticker">
-    <div class="ticker-track">
-        <span>Healthy Living</span>
-        <span>Digital Products</span>
-        <span>Online Learning</span>
-        <span>Smart Tools</span>
-        <span>AI Resources</span>
-        <span>Healthy Living</span>
-        <span>Digital Products</span>
-        <span>Online Learning</span>
-        <span>Smart Tools</span>
-        <span>AI Resources</span>
+<!-- TRUST STRIP -->
+
+<section class="intro-strip">
+    <div class="intro-inner">
+        <div class="intro-item">
+            <div class="intro-icon">✧</div>
+            <strong>Thoughtful Selection</strong>
+            <span>Useful products and resources</span>
+        </div>
+        <div class="intro-item">
+            <div class="intro-icon">◇</div>
+            <strong>Clear Information</strong>
+            <span>Simple details to help you explore</span>
+        </div>
+        <div class="intro-item">
+            <div class="intro-icon">♡</div>
+            <strong>Made for Everyday Life</strong>
+            <span>Health, wellness and digital ideas</span>
+        </div>
     </div>
-</div>
+</section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-    <span>✓ Useful Resources</span>
-    <span>✓ Health & Wellness</span>
-    <span>✓ Digital Learning</span>
-    <span>✓ Easy Product Discovery</span>
-</div>
+<!-- CATEGORY COLLECTIONS -->
+
+<section class="section">
+    <div class="section-heading">
+        <div class="eyebrow">Explore Our Collection</div>
+        <h2>Find What Inspires You</h2>
+        <p>Explore our hand-picked health and digital collections.</p>
+    </div>
+
+    <div class="category-grid">
+        <div class="category-card"
+             style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900');">
+            <div class="category-content">
+                <span>Wellness & Nutrition</span>
+                <h3>Health Picks</h3>
+                <a href="#health">EXPLORE HEALTH →</a>
+            </div>
+        </div>
+
+        <div class="category-card"
+             style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900');">
+            <div class="category-content">
+                <span>Learning & Online Tools</span>
+                <h3>Digital Picks</h3>
+                <a href="#digital">EXPLORE DIGITAL →</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- HEALTH PRODUCTS -->
-<section class="section" id="health">
+
+<section class="products-section" id="health">
+<div class="section">
+
     <div class="section-heading">
-        <h2>Health & Wellness</h2>
-        <p>Explore products and resources for your health journey.</p>
+        <div class="eyebrow">Wellness Collection</div>
+        <h2>Health & Wellness Picks</h2>
+        <p>Explore wellness products and helpful nutrition resources.</p>
     </div>
 
     <div class="product-grid">
 
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600" alt="GlucoTonic">
+        <article class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600"
+                     alt="GlucoTonic product">
+                <span class="product-label">Health</span>
+            </div>
             <div class="product-info">
-                <span class="category">Health</span>
                 <h3>GlucoTonic</h3>
-                <p>Discover more about this health and wellness product.</p>
-                <a class="product-button" href="https://www.digistore24.com/redir/660957/Kiani11/" target="_blank" rel="noopener noreferrer">Explore Product</a>
+                <p>
+                    A daily wellness supplement. Visit the official
+                    page to review its ingredients and product details.
+                </p>
+                <a class="product-button"
+                   href="https://www.digistore24.com/redir/660957/Kiani11/"
+                   target="_blank" rel="noopener sponsored">View Details</a>
             </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600" alt="Smoothie Diet">
+        <article class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600"
+                     alt="The Official Smoothie Diet">
+                <span class="product-label">Nutrition</span>
+            </div>
             <div class="product-info">
-                <span class="category">Health</span>
                 <h3>The Official Smoothie Diet</h3>
-                <p>Explore smoothie recipes and learn more about this program.</p>
-                <a class="product-button" href="https://official.smoothiediet.com/#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+                <p>
+                    A 21-day smoothie program with recipes
+                    and a shopping list.
+                </p>
+                <a class="product-button"
+                   href="https://official.smoothiediet.com/#aff=Kiani11"
+                   target="_blank" rel="noopener sponsored">View Details</a>
             </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-            <img src="GP8USY48.png" alt="The Encyclopedia of Power Foods">
-            <div class="product-info">
-                <span class="category">Health</span>
-                <h3>The Encyclopedia of Power Foods</h3>
-                <p>Discover information about foods and nutrition.</p>
-                <a class="product-button" href="https://wsl.365dailyhealth.com/landing-sale-page1713272576177#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+        <article class="product-card">
+            <div class="product-image">
+                <img src="GP8USY48.png"
+                     alt="The Encyclopedia of Power Foods">
+                <span class="product-label">Food Guide</span>
             </div>
-        </div>
+            <div class="product-info">
+                <h3>The Encyclopedia of Power Foods</h3>
+                <p>
+                    A food guide explaining the nutritional
+                    value of everyday foods.
+                </p>
+                <a class="product-button"
+                   href="https://wsl.365dailyhealth.com/landing-sale-page1713272576177#aff=Kiani11"
+                   target="_blank" rel="noopener sponsored">View Details</a>
+            </div>
+        </article>
 
     </div>
+</div>
 </section>
 
 <!-- DIGITAL PRODUCTS -->
-<section class="section" id="digital" style="background:#edf5ef;">
+
+<section class="digital-section" id="digital">
+<div class="section">
+
     <div class="section-heading">
-        <h2>Digital Products & Online Tools</h2>
-        <p>Explore digital resources, marketing tools and online learning.</p>
+        <div class="eyebrow">Digital Learning Collection</div>
+        <h2>Digital Tools & Resources</h2>
+        <p>Explore courses, guides and resources for your digital journey.</p>
     </div>
 
     <div class="search-area">
-        <input type="text" id="productSearch" placeholder="Search products by name or keyword..." aria-label="Search digital products">
-        <div class="search-message" id="searchMessage">Search by product name or keyword.</div>
+        <input type="text" id="productSearch"
+               placeholder="Search digital products...">
+        <button type="button" id="searchButton">Search</button>
     </div>
 
-    <div class="product-grid" id="digitalProducts">
+    <div class="product-grid" id="digitalGrid">
 
-        <div class="product-card searchable-card" data-search="google ads matze marketing advertising">
-            <img src="google-ads.png" alt="Google Ads with Matze">
+        <article class="product-card">
+            <div class="product-image">
+                <img src="google-ads.png"
+                     alt="Google Ads with Matze"
+                     style="object-position:top;">
+                <span class="product-label">Marketing</span>
+            </div>
             <div class="product-info">
-                <span class="category">Digital Marketing</span>
                 <h3>Google Ads with Matze</h3>
-                <p>Explore a resource for learning about Google Ads and online advertising.</p>
-                <a class="product-button" href="https://einfachmitmatze.de/google-ads-search/#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+                <p>
+                    A beginner-friendly guide to planning a Google
+                    Ads search campaign, including goals, keywords,
+                    ad copy and budget.
+                </p>
+                <a class="product-button"
+                   href="https://einfachmitmatze.de/google-ads-search/#aff=Kiani11"
+                   target="_blank" rel="noopener sponsored">View Details</a>
             </div>
-        </div>
+        </article>
 
-        <div class="product-card searchable-card" data-search="josephs well water revolution">
-            <img src="josephswell.jpg" alt="Joseph's Well">
+        <article class="product-card">
+            <div class="product-image">
+                <img src="josephswell.jpg" alt="Joseph's Well">
+                <span class="product-label">DIY Guide</span>
+            </div>
             <div class="product-info">
-                <span class="category">Digital Resource</span>
                 <h3>Joseph's Well</h3>
-                <p>Learn more about this water-related product and its information.</p>
-                <a class="product-button" href="https://uswaterrevolution.com/#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+                <p>
+                    A digital DIY guide with videos and blueprints
+                    for building a small home water-from-air system.
+                    It is a guide, not a ready-made machine.
+                </p>
+                <a class="product-button"
+                   href="https://uswaterrevolution.com/#aff=Kiani11"
+                   target="_blank" rel="noopener sponsored">View Details</a>
             </div>
-        </div>
+        </article>
 
-        <div class="product-card searchable-card" data-search="1000 chatgpt prompts online marketing ai">
-            <img src="8G5IJ4GE.webp" alt="1000 ChatGPT Prompts">
+        <article class="product-card">
+            <div class="product-image">
+                <img src="8G5IJ4GE.webp"
+                     alt="1000+ ChatGPT Prompts for Online Marketing">
+                <span class="product-label">AI & Marketing</span>
+            </div>
             <div class="product-info">
-                <span class="category">AI & Marketing</span>
                 <h3>1000+ ChatGPT Prompts for Online Marketing</h3>
-                <p>Explore prompts and ideas for online marketing and productivity.</p>
-                <a class="product-button" href="https://heikoboos.com/1000-chatgpt-prompts-for-online-marketing/#aff=Kiani11" target="_blank" rel="noopener noreferrer">Explore Product</a>
+                <p>
+                    Discover prompts for social media marketing,
+                    SEO, email marketing, advertising and sales copy.
+                </p>
+                <a class="product-button"
+                   href="https://heikoboos.com/1000-chatgpt-prompts-for-online-marketing/#aff=Kiani11"
+                   target="_blank" rel="noopener sponsored">View Details</a>
             </div>
-        </div>
+        </article>
 
-        <div class="product-card searchable-card" data-search="b2b sales masterclass business sales">
-            <img src="B2B.JPG" alt="B2B Sales Masterclass">
-            <div class="product-info">
-                <span class="category">Business & Sales</span>
-                <h3>B2B Sales Masterclass</h3>
-                <p>Explore sales training resources for business development.</p>
-                <a class="product-button" href="https://www.checkout-ds24.com/redir/764294/Kiani11/" target="_blank" rel="noopener noreferrer">Explore Product</a>
+        <article class="product-card">
+            <div class="product-image">
+                <img src="B2B.JPG" alt="B2B Sales Masterclass">
+                <span class="product-label">Sales Training</span>
             </div>
-        </div>
+            <div class="product-info">
+                <h3>B2B Sales Masterclass</h3>
+                <p>
+                    Explore B2B sales strategies, prospecting,
+                    negotiation, pipeline management and leadership.
+                </p>
+                <a class="product-button"
+                   href="https://www.checkout-ds24.com/redir/764294/Kiani11/"
+                   target="_blank" rel="noopener sponsored">View Details</a>
+            </div>
+        </article>
 
     </div>
+
+    <div class="no-results" id="noResults">
+        No products found. Try another keyword.
+    </div>
+
+</div>
 </section>
 
 <!-- ABOUT -->
-<section class="section about-section" id="about">
-    <div class="about-content">
-        <h2>About HealthDigitalPicks</h2>
-        <p>Welcome to HealthDigitalPicks. Our goal is to share useful health resources, digital products, online tools and learning opportunities.</p>
-        <p>We aim to help visitors discover resources that may support their personal interests, learning and online journey.</p>
-        <p>Explore our products and blog to discover more useful information.</p>
+
+<section class="about-section" id="about">
+    <div class="about-inner">
+        <div class="eyebrow">Our Story</div>
+        <h2>Thoughtful Picks. Smarter Choices.</h2>
+        <p>
+            HealthDigitalPicks brings together health and wellness
+            resources, digital learning products and useful guides.
+            Our goal is to make exploring products and information
+            simple, clear and convenient.
+        </p>
     </div>
 </section>
 
-<!-- FOOTER -->
-<footer id="contact">
-    <h2>HealthDigitalPicks</h2>
-    <p>Discover Health, Digital Products & Useful Online Resources.</p>
+<!-- BLOG CTA -->
 
-    <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="#health">Health</a>
-        <a href="#digital">Digital</a>
-        <a href="blog.html">Blog</a>
-        <a href="#about">About</a>
-        <a href="mailto:shahidkiani1@gmail.com">Contact</a>
+<section class="bottom-cta">
+    <h2>Explore Ideas & Helpful Guides</h2>
+    <p>Visit our blog for articles, tips and useful information.</p>
+    <a href="blog.html">VISIT OUR BLOG →</a>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+    <div class="footer-inner">
+
+        <div class="footer-about">
+            <div class="footer-logo">
+                HealthDigital<span>Picks</span>
+            </div>
+            <p>
+                Exploring health, wellness and digital resources
+                to help you discover useful ideas and make
+                informed choices.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Explore</h3>
+            <a href="index.html">Home</a>
+            <a href="#health">Health Products</a>
+            <a href="#digital">Digital Products</a>
+            <a href="blog.html">Blog</a>
+            <a href="#about">About Us</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Connect</h3>
+            <a href="https://www.facebook.com/WHF.shahid/"
+               target="_blank" rel="noopener">Facebook</a>
+            <a href="mailto:shahidkiani1@gmail.com">Email Us</a>
+        </div>
+
     </div>
 
-    <p>Affiliate Disclosure: Some links on this website are affiliate links. We may earn a commission if you make a purchase through them, at no extra cost to you.</p>
-    <p>Health Disclaimer: Information on this website is for general informational purposes and is not a substitute for professional medical advice.</p>
+    <div class="footer-bottom">
+        <div class="disclosure">
+            <strong>Affiliate Disclosure:</strong>
+            Some links on this website are affiliate links.
+            If you purchase through them, we may earn a commission
+            at no extra cost to you.
+            <br><br>
+            <strong>Health Disclaimer:</strong>
+            Information on this website is for general knowledge
+            only and is not medical advice. Consult a qualified
+            healthcare professional before starting a supplement
+            or diet program.
+        </div>
 
-    <div class="copyright">
-        © 2026 HealthDigitalPicks. All Rights Reserved.
+        © 2026 HealthDigitalPicks. All rights reserved.
     </div>
 </footer>
 
@@ -752,9 +1250,10 @@ footer p {
 /* HERO SLIDER */
 
 const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".slider-dots button");
-const previousButton = document.querySelector(".slider-prev");
-const nextButton = document.querySelector(".slider-next");
+const dots = document.querySelectorAll(".dot");
+const nextButton = document.querySelector(".next");
+const prevButton = document.querySelector(".prev");
+const hero = document.querySelector(".hero");
 
 let currentSlide = 0;
 let sliderTimer;
@@ -767,8 +1266,6 @@ function showSlide(index) {
 
     slides[currentSlide].classList.add("active");
     dots[currentSlide].classList.add("active");
-
-    restartSlider();
 }
 
 function nextSlide() {
@@ -779,59 +1276,71 @@ function previousSlide() {
     showSlide(currentSlide - 1);
 }
 
-function restartSlider() {
+function startSlider() {
     clearInterval(sliderTimer);
-    sliderTimer = setInterval(nextSlide, 5000);
+    sliderTimer = setInterval(nextSlide, 5500);
 }
 
-nextButton.addEventListener("click", nextSlide);
-previousButton.addEventListener("click", previousSlide);
+nextButton.addEventListener("click", function() {
+    nextSlide();
+    startSlider();
+});
+
+prevButton.addEventListener("click", function() {
+    previousSlide();
+    startSlider();
+});
 
 dots.forEach(function(dot, index) {
     dot.addEventListener("click", function() {
         showSlide(index);
+        startSlider();
     });
 });
 
-document.querySelector(".hero-slider").addEventListener("mouseenter", function() {
+hero.addEventListener("mouseenter", function() {
     clearInterval(sliderTimer);
 });
 
-document.querySelector(".hero-slider").addEventListener("mouseleave", function() {
-    restartSlider();
-});
+hero.addEventListener("mouseleave", startSlider);
 
-restartSlider();
+startSlider();
 
-/* PRODUCT SEARCH */
+/* DIGITAL PRODUCT SEARCH */
 
 const searchInput = document.getElementById("productSearch");
-const searchMessage = document.getElementById("searchMessage");
-const productCards = document.querySelectorAll("#digitalProducts .searchable-card");
+const searchButton = document.getElementById("searchButton");
+const digitalCards = document.querySelectorAll("#digitalGrid .product-card");
+const noResults = document.getElementById("noResults");
 
 function searchProducts() {
     const query = searchInput.value.toLowerCase().trim();
     let visibleCount = 0;
 
-    productCards.forEach(function(card) {
-        const text = (card.innerText + " " + card.dataset.search).toLowerCase();
-        const matches = text.includes(query);
+    digitalCards.forEach(function(card) {
+        const productText = card.innerText.toLowerCase();
 
-        card.style.display = matches ? "flex" : "none";
-
-        if (matches) {
+        if (productText.includes(query)) {
+            card.style.display = "flex";
             visibleCount++;
+        } else {
+            card.style.display = "none";
         }
     });
 
-    if (query === "") {
-        searchMessage.textContent = "Search by product name or keyword.";
-    } else {
-        searchMessage.textContent = visibleCount + " product(s) found.";
-    }
+    noResults.style.display =
+        visibleCount === 0 ? "block" : "none";
 }
 
+searchButton.addEventListener("click", searchProducts);
+
 searchInput.addEventListener("input", searchProducts);
+
+searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        searchProducts();
+    }
+});
 </script>
 
 </body>
