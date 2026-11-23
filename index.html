@@ -48,7 +48,7 @@ a {
     text-decoration: none;
 }
 
-/* TOP ANNOUNCEMENT */
+/* ANNOUNCEMENT */
 
 .announcement {
     background: var(--green-dark);
@@ -182,8 +182,14 @@ header {
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .eyebrow {
@@ -269,8 +275,13 @@ header {
     color: var(--green-dark);
 }
 
-.prev { left: 22px; }
-.next { right: 22px; }
+.prev {
+    left: 22px;
+}
+
+.next {
+    right: 22px;
+}
 
 .slider-dots {
     position: absolute;
@@ -620,7 +631,7 @@ header {
     font-size: 14px;
 }
 
-/* NEWSLETTER STYLE CTA */
+/* BLOG CTA */
 
 .bottom-cta {
     text-align: center;
@@ -804,8 +815,13 @@ footer {
         font-size: 19px;
     }
 
-    .prev { left: 8px; }
-    .next { right: 8px; }
+    .prev {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
 
     .intro-inner {
         grid-template-columns: 1fr;
@@ -951,27 +967,32 @@ footer {
 
 <section class="intro-strip">
     <div class="intro-inner">
+
         <div class="intro-item">
             <div class="intro-icon">✧</div>
             <strong>Thoughtful Selection</strong>
             <span>Useful products and resources</span>
         </div>
+
         <div class="intro-item">
             <div class="intro-icon">◇</div>
             <strong>Clear Information</strong>
             <span>Simple details to help you explore</span>
         </div>
+
         <div class="intro-item">
             <div class="intro-icon">♡</div>
             <strong>Made for Everyday Life</strong>
             <span>Health, wellness and digital ideas</span>
         </div>
+
     </div>
 </section>
 
 <!-- CATEGORY COLLECTIONS -->
 
 <section class="section">
+
     <div class="section-heading">
         <div class="eyebrow">Explore Our Collection</div>
         <h2>Find What Inspires You</h2>
@@ -979,6 +1000,7 @@ footer {
     </div>
 
     <div class="category-grid">
+
         <div class="category-card"
              style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900');">
             <div class="category-content">
@@ -996,6 +1018,7 @@ footer {
                 <a href="#digital">EXPLORE DIGITAL →</a>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -1066,28 +1089,25 @@ footer {
             </div>
         </article>
 
-    </div>
-    
         <article class="product-card">
             <div class="product-image">
                 <img src="circo2-product-1.jpg"
                      alt="CircO2 Nitric Oxide Booster">
                 <span class="product-label">Health</span>
             </div>
-
             <div class="product-info">
                 <h3>CircO2 Nitric Oxide Booster</h3>
                 <p>
                     Discover CircO2, its ingredients and
                     product details in our complete review.
                 </p>
-                <a class="product-button"
-                   href="circo2-review.html">
-                   View Details
+                <a class="product-button" href="circo2-review.html">
+                    View Details
                 </a>
             </div>
         </article>
 
+    </div>
 </div>
 </section>
 
@@ -1183,9 +1203,12 @@ footer {
             </div>
         </article>
 
+        <!-- THE WEALTH SIGNAL -->
+
         <article class="product-card">
             <div class="product-image">
-                <img src="wealth-signal.jpg" alt="The Wealth Signal digital program">
+                <img src="wealth-signal.jpg"
+                     alt="The Wealth Signal digital program">
                 <span class="product-label">Personal Development</span>
             </div>
             <div class="product-info">
@@ -1195,7 +1218,9 @@ footer {
                     what to consider before purchasing.
                 </p>
                 <a class="product-button"
-                   href="the-wealth-signal-review.html">Read Review</a>
+                   href="the-wealth-signal-review.html">
+                    Read Review
+                </a>
             </div>
         </article>
 
@@ -1284,6 +1309,7 @@ footer {
 </footer>
 
 <script>
+
 /* HERO SLIDER */
 
 const slides = document.querySelectorAll(".slide");
@@ -1378,6 +1404,7 @@ searchInput.addEventListener("keydown", function(event) {
         searchProducts();
     }
 });
+
 </script>
 
 </body>
