@@ -32,8 +32,6 @@ body {
     line-height: 1.6;
 }
 
-/* NAVIGATION */
-
 .nav {
     background: white;
     padding: 15px 6%;
@@ -76,8 +74,6 @@ body {
     color: var(--green);
 }
 
-/* HERO */
-
 .hero {
     background: linear-gradient(120deg, #174d3c, #287a55);
     color: white;
@@ -94,8 +90,6 @@ body {
     color: #e4eee7;
     font-size: 16px;
 }
-
-/* BLOG SECTION */
 
 .section {
     max-width: 1200px;
@@ -119,16 +113,12 @@ body {
     font-size: 15px;
 }
 
-/* GRID */
-
 .grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
     align-items: stretch;
 }
-
-/* CARD */
 
 .card {
     background: white;
@@ -146,8 +136,6 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 9px 22px rgba(23, 77, 60, 0.13);
 }
-
-/* IMAGE */
 
 .card-img {
     position: relative;
@@ -177,8 +165,6 @@ body {
     font-weight: 700;
 }
 
-/* CARD CONTENT */
-
 .card-body {
     padding: 20px;
     display: flex;
@@ -200,8 +186,6 @@ body {
     flex: 1;
 }
 
-/* BUTTON */
-
 .btn {
     display: block;
     text-align: center;
@@ -218,8 +202,6 @@ body {
 .btn:hover {
     background: var(--green);
 }
-
-/* FOOTER */
 
 footer {
     margin-top: 40px;
@@ -242,15 +224,11 @@ footer a {
     text-decoration: none;
 }
 
-/* TABLET */
-
 @media (max-width: 900px) {
     .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-
-/* MOBILE */
 
 @media (max-width: 600px) {
     .nav {
@@ -289,8 +267,6 @@ footer a {
 
 <body>
 
-<!-- NAVIGATION -->
-
 <nav class="nav">
     <a href="index.html" class="logo">
         Health<span>Digital</span>Picks
@@ -305,14 +281,10 @@ footer a {
     </div>
 </nav>
 
-<!-- HERO -->
-
 <header class="hero">
     <h1>Our Blog</h1>
     <p>Helpful guides, health insights and digital knowledge for smarter choices.</p>
 </header>
-
-<!-- BLOG ARTICLES -->
 
 <section class="section">
 
@@ -324,13 +296,11 @@ footer a {
     <div class="grid">
 
         <!-- BLOG 1: JOSEPH'S WELL -->
-
         <div class="card">
             <div class="card-img">
                 <img src="josephswell.jpg" alt="Joseph's Well Explained">
                 <span class="tag">Digital</span>
             </div>
-
             <div class="card-body">
                 <h3>Joseph's Well Explained: What It Is and What to Check Before You Buy</h3>
                 <p>A plain explanation of this DIY water-from-air guide, with safety notes and questions to ask first.</p>
@@ -339,13 +309,11 @@ footer a {
         </div>
 
         <!-- BLOG 2: GOOGLE ADS -->
-
         <div class="card">
             <div class="card-img">
                 <img src="google-ads.png" alt="Google Ads for Beginners">
                 <span class="tag">Digital</span>
             </div>
-
             <div class="card-body">
                 <h3>Google Ads for Beginners: Plan Your First Search Campaign</h3>
                 <p>A simple five-step plan: goal, keywords, ad copy, budget and how to evaluate results.</p>
@@ -354,28 +322,24 @@ footer a {
         </div>
 
         <!-- BLOG 3: CHATGPT PROMPTS -->
-
         <div class="card">
             <div class="card-img">
                 <img src="8G5IJ4GE.webp" alt="1000+ ChatGPT Prompts">
                 <span class="tag">Digital Marketing</span>
             </div>
-
             <div class="card-body">
                 <h3>1000+ ChatGPT Prompts for Your Online Marketing</h3>
                 <p>Discover useful prompts for social media, SEO, email marketing and growing your online business.</p>
-                <a href="/blog/1000-chatgpt-prompts.html" class="btn">Read Article</a>
+                <a href="1000-chatgpt-prompts.html" class="btn">Read Article</a>
             </div>
         </div>
 
         <!-- BLOG 4: ARTIFICIAL INTELLIGENCE -->
-
         <div class="card">
             <div class="card-img">
                 <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800" alt="Artificial Intelligence">
                 <span class="tag">Artificial Intelligence</span>
             </div>
-
             <div class="card-body">
                 <h3>Artificial Intelligence in 2026: How AI Is Transforming the World</h3>
                 <p>Discover how AI is changing business, healthcare, education, science and everyday life around the world.</p>
@@ -384,13 +348,11 @@ footer a {
         </div>
 
         <!-- BLOG 5: NITRIC OXIDE -->
-
         <div class="card">
             <div class="card-img">
                 <img src="circo2-product-1.jpg" alt="Nitric Oxide and Beetroot">
                 <span class="tag">Health</span>
             </div>
-
             <div class="card-body">
                 <h3>Nitric Oxide: What It Is, Why It Matters and Which Foods Contain It</h3>
                 <p>Learn what nitric oxide does in the body, explore foods that support its production and understand supplement considerations.</p>
@@ -398,10 +360,21 @@ footer a {
             </div>
         </div>
 
+        <!-- BLOG 6: THE WEALTH SIGNAL -->
+        <div class="card">
+            <div class="card-img">
+                <img src="wealth-signal.jpg" alt="The Wealth Signal">
+                <span class="tag">Personal Development</span>
+            </div>
+            <div class="card-body">
+                <h3>The Wealth Signal Review: What Is It and What Should You Know?</h3>
+                <p>Explore an overview of The Wealth Signal, what the program claims to offer, and important points to consider before purchasing.</p>
+                <a href="the-wealth-signal-review.html" class="btn">Read Review</a>
+            </div>
+        </div>
+
     </div>
 </section>
-
-<!-- FOOTER -->
 
 <footer>
     <p><strong>Affiliate disclosure:</strong> Some links on this site are affiliate links. If you buy through them, I may earn a commission at no extra cost to you.</p>
