@@ -5,18 +5,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HealthDigitalPicks | Health & Digital Blog</title>
-<meta name="description" content="Explore helpful articles about health, nutrition, artificial intelligence and digital marketing tools.">
+<title>Blog | HealthDigitalPicks</title>
+<meta name="description" content="Explore helpful health, wellness, AI and digital marketing guides at HealthDigitalPicks.">
+
+<link rel="canonical" href="https://healthdigitalpicks.github.io/blog.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --green-dark: #174d3c;
-    --green: #287a55;
+    --green: #174d3c;
+    --dark: #10382d;
     --gold: #c5a15b;
-    --text: #24352d;
-    --muted: #66756d;
-    --border: #e1e8e1;
-    --bg: #f8f6ef;
+    --cream: #f8f6ef;
+    --white: #ffffff;
+    --text: #26352e;
+    --muted: #718078;
+    --border: #e8e8df;
+    --shadow: 0 12px 35px rgba(23,77,60,.09);
 }
 
 * {
@@ -25,32 +33,47 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
 
-.nav {
-    background: white;
-    padding: 15px 6%;
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+    background: rgba(248,246,239,.98);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+    padding: 17px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    gap: 15px;
 }
 
 .logo {
-    font-size: 21px;
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
     font-weight: 800;
-    color: var(--green-dark);
-    text-decoration: none;
 }
 
 .logo span {
@@ -59,157 +82,185 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 22px;
+    align-items: center;
+    gap: 27px;
     flex-wrap: wrap;
 }
 
 .nav-links a {
-    text-decoration: none;
     color: var(--text);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
 }
 
 .nav-links a:hover {
-    color: var(--green);
+    color: var(--gold);
 }
 
+/* HERO */
+
 .hero {
-    background: linear-gradient(120deg, #174d3c, #287a55);
+    background: linear-gradient(120deg, var(--dark), var(--green));
     color: white;
     text-align: center;
-    padding: 65px 20px;
+    padding: 85px 20px;
+}
+
+.hero .eyebrow {
+    color: #e4d2a9;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 55px);
+    margin-bottom: 15px;
 }
 
 .hero p {
-    color: #e4eee7;
+    max-width: 650px;
+    margin: auto;
+    color: #e4e9e3;
     font-size: 16px;
 }
 
+/* BLOG SECTION */
+
 .section {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
-    padding: 45px 20px 30px;
+    padding: 75px 25px;
 }
 
 .section-heading {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.section-heading .eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
 }
 
 .section-heading h2 {
-    color: var(--green-dark);
-    font-size: 27px;
-    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+    color: var(--green);
+    font-size: clamp(30px, 4vw, 42px);
+    margin-top: 8px;
 }
 
 .section-heading p {
     color: var(--muted);
-    font-size: 15px;
+    margin-top: 10px;
 }
 
-.grid {
+/* BLOG GRID */
+
+.blog-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    align-items: stretch;
 }
 
-.card {
+.blog-card {
     background: white;
     border: 1px solid var(--border);
-    border-radius: 15px;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: .35s;
     min-width: 0;
-    box-shadow: 0 4px 14px rgba(23, 77, 60, 0.07);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 9px 22px rgba(23, 77, 60, 0.13);
+.blog-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+    border-color: var(--gold-light, #e4d2a9);
 }
 
-.card-img {
-    position: relative;
-    width: 100%;
-    height: 190px;
+.blog-image {
+    height: 245px;
     overflow: hidden;
-    background: #f2f4ef;
+    position: relative;
+    background: var(--cream);
 }
 
-.card-img img {
+.blog-image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: center;
     display: block;
+    transition: transform .5s;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.04);
 }
 
 .tag {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    background: var(--green-dark);
+    top: 14px;
+    left: 14px;
+    background: var(--green);
     color: white;
-    padding: 5px 12px;
-    border-radius: 30px;
-    font-size: 11px;
-    font-weight: 700;
+    padding: 7px 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.card-body {
-    padding: 20px;
+.blog-info {
+    padding: 24px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-.card h3 {
-    color: var(--green-dark);
-    font-size: 18px;
-    line-height: 1.4;
+.blog-info h3 {
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.35;
     margin-bottom: 12px;
 }
 
-.card p {
+.blog-info p {
     color: var(--muted);
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     flex: 1;
 }
 
-.btn {
-    display: block;
+.read-button {
+    display: inline-block;
     text-align: center;
-    background: var(--green-dark);
+    background: var(--green);
     color: white;
-    padding: 11px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-    transition: background 0.2s ease;
+    padding: 12px 18px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: .3s;
 }
 
-.btn:hover {
-    background: var(--green);
+.read-button:hover {
+    background: var(--gold);
+    color: var(--dark);
 }
+
+/* FOOTER */
 
 footer {
-    margin-top: 40px;
-    background: white;
-    border-top: 1px solid var(--border);
-    padding: 30px 20px;
+    background: var(--dark);
+    color: #e4e9e3;
+    padding: 35px 20px;
     text-align: center;
-    color: var(--muted);
     font-size: 13px;
 }
 
@@ -219,47 +270,44 @@ footer p {
 }
 
 footer a {
-    color: var(--green);
+    color: var(--gold);
     font-weight: 700;
-    text-decoration: none;
 }
 
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+/* MOBILE */
+
+@media(max-width: 900px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 600px) {
-    .nav {
+@media(max-width: 600px) {
+    .navbar {
         justify-content: center;
         text-align: center;
     }
 
     .nav-links {
         justify-content: center;
-        gap: 14px;
+        gap: 16px;
     }
 
     .hero {
-        padding: 45px 15px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
+        padding: 55px 18px;
     }
 
     .section {
-        padding: 30px 15px;
+        padding: 45px 16px;
     }
 
-    .grid {
+    .blog-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 22px;
     }
 
-    .card-img {
-        height: 200px;
+    .blog-image {
+        height: 230px;
     }
 }
 </style>
@@ -267,130 +315,267 @@ footer a {
 
 <body>
 
-<nav class="nav">
-    <a href="index.html" class="logo">
-        Health<span>Digital</span>Picks
-    </a>
+<!-- HEADER -->
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#health">Health</a>
-        <a href="index.html#digital">Digital</a>
-        <a href="blog.html">Blog</a>
-        <a href="index.html#about">About</a>
-    </div>
-</nav>
+<header>
+    <nav class="navbar">
 
-<header class="hero">
-    <h1>Our Blog</h1>
-    <p>Helpful guides, health insights and digital knowledge for smarter choices.</p>
+        <a href="index.html" class="logo">
+            Health<span>Digital</span>Picks
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#health">Health</a>
+            <a href="index.html#digital">Digital</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#about">About</a>
+        </div>
+
+    </nav>
 </header>
 
-<section class="section">
+<!-- HERO -->
 
-    <div class="section-heading">
-        <h2>Latest Articles</h2>
-        <p>Explore our latest guides and informative articles.</p>
-    </div>
+<section class="hero">
 
-    <div class="grid">
+    <div class="eyebrow">HEALTH & DIGITAL KNOWLEDGE</div>
 
-        <!-- BLOG 1: JOSEPH'S WELL -->
-        <div class="card">
-            <div class="card-img">
-                <img src="josephswell.jpg" alt="Joseph's Well Explained">
-                <span class="tag">Digital</span>
-            </div>
-            <div class="card-body">
-                <h3>Joseph's Well Explained: What It Is and What to Check Before You Buy</h3>
-                <p>A plain explanation of this DIY water-from-air guide, with safety notes and questions to ask first.</p>
-                <a href="josephs-well-explained.html" class="btn">Read Article</a>
-            </div>
-        </div>
-
-        <!-- BLOG 2: GOOGLE ADS -->
-        <div class="card">
-            <div class="card-img">
-                <img src="google-ads.png" alt="Google Ads for Beginners">
-                <span class="tag">Digital</span>
-            </div>
-            <div class="card-body">
-                <h3>Google Ads for Beginners: Plan Your First Search Campaign</h3>
-                <p>A simple five-step plan: goal, keywords, ad copy, budget and how to evaluate results.</p>
-                <a href="google-ads-for-beginners.html" class="btn">Read Article</a>
-            </div>
-        </div>
-
-        <!-- BLOG 3: CHATGPT PROMPTS -->
-        <div class="card">
-            <div class="card-img">
-                <img src="8G5IJ4GE.webp" alt="1000+ ChatGPT Prompts">
-                <span class="tag">Digital Marketing</span>
-            </div>
-            <div class="card-body">
-                <h3>1000+ ChatGPT Prompts for Your Online Marketing</h3>
-                <p>Discover useful prompts for social media, SEO, email marketing and growing your online business.</p>
-                <a href="1000-chatgpt-prompts.html" class="btn">Read Article</a>
-            </div>
-        </div>
-
-        <!-- BLOG 4: ARTIFICIAL INTELLIGENCE -->
-        <div class="card">
-            <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800" alt="Artificial Intelligence">
-                <span class="tag">Artificial Intelligence</span>
-            </div>
-            <div class="card-body">
-                <h3>Artificial Intelligence in 2026: How AI Is Transforming the World</h3>
-                <p>Discover how AI is changing business, healthcare, education, science and everyday life around the world.</p>
-                <a href="ai-transforming-world-2026.html" class="btn">Read Article</a>
-            </div>
-        </div>
-
-        <!-- BLOG 5: NITRIC OXIDE -->
-        <div class="card">
-            <div class="card-img">
-                <img src="circo2-product-1.jpg" alt="Nitric Oxide and Beetroot">
-                <span class="tag">Health</span>
-            </div>
-            <div class="card-body">
-                <h3>Nitric Oxide: What It Is, Why It Matters and Which Foods Contain It</h3>
-                <p>Learn what nitric oxide does in the body, explore foods that support its production and understand supplement considerations.</p>
-                <a href="nitric-oxide-guide.html" class="btn">Read Article</a>
-            </div>
-        </div>
-
-        <!-- BLOG 6: THE WEALTH SIGNAL -->
-        <div class="card">
-            <div class="card-img">
-                <img src="wealth-signal.JPG" alt="The Wealth Signal">
-                <span class="tag">Personal Development</span>
-            </div>
-            <div class="card-body">
-                <h3>The Wealth Signal Review: What Is It and What Should You Know?</h3>
-                <p>Explore an overview of The Wealth Signal, what the program claims to offer, and important points to consider before purchasing.</p>
-                <a href="the-wealth-signal-review.html" class="btn">Read Review</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    <p><strong>Affiliate disclosure:</strong> Some links on this site are affiliate links. If you buy through them, I may earn a commission at no extra cost to you.</p>
+    <h1>Our Blog</h1>
 
     <p>
-        Follow us on
+        Explore helpful guides, health insights,
+        artificial intelligence and digital marketing
+        knowledge for smarter decisions.
+    </p>
+
+</section>
+
+<!-- BLOG ARTICLES -->
+
+<main class="section">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">LATEST INSIGHTS</div>
+
+        <h2>Explore Our Articles</h2>
+
+        <p>
+            Practical information, useful guides
+            and product reviews.
+        </p>
+
+    </div>
+
+    <div class="blog-grid">
+
+        <!-- ARTICLE 1 -->
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+                <img src="josephswell.jpg"
+                     alt="Joseph's Well Explained"
+                     loading="lazy">
+                <span class="tag">Digital</span>
+            </div>
+
+            <div class="blog-info">
+
+                <h3>
+                    Joseph's Well Explained:
+                    What It Is and What to Check Before You Buy
+                </h3>
+
+                <p>
+                    A plain explanation of this DIY
+                    water-from-air guide, with safety
+                    notes and questions to ask first.
+                </p>
+
+                <a href="josephs-well-explained.html"
+                   class="read-button">READ ARTICLE →</a>
+
+            </div>
+        </article>
+
+        <!-- ARTICLE 2 -->
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+                <img src="google-ads.png"
+                     alt="Google Ads for Beginners"
+                     loading="lazy">
+                <span class="tag">Marketing</span>
+            </div>
+
+            <div class="blog-info">
+
+                <h3>
+                    Google Ads for Beginners:
+                    Plan Your First Search Campaign
+                </h3>
+
+                <p>
+                    Learn about campaign goals,
+                    keywords, ad copy, budget
+                    and measuring results.
+                </p>
+
+                <a href="google-ads-for-beginners.html"
+                   class="read-button">READ ARTICLE →</a>
+
+            </div>
+        </article>
+
+        <!-- ARTICLE 3 -->
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+                <img src="8G5IJ4GE.webp"
+                     alt="1000 ChatGPT Prompts"
+                     loading="lazy">
+                <span class="tag">AI & Marketing</span>
+            </div>
+
+            <div class="blog-info">
+
+                <h3>
+                    1000+ ChatGPT Prompts
+                    for Your Online Marketing
+                </h3>
+
+                <p>
+                    Discover useful prompts for social
+                    media, SEO, email marketing
+                    and growing your online business.
+                </p>
+
+                <a href="1000-chatgpt-prompts.html"
+                   class="read-button">READ ARTICLE →</a>
+
+            </div>
+        </article>
+
+        <!-- ARTICLE 4 -->
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"
+                     alt="Artificial Intelligence Technology"
+                     loading="lazy">
+                <span class="tag">Artificial Intelligence</span>
+            </div>
+
+            <div class="blog-info">
+
+                <h3>
+                    Artificial Intelligence in 2026:
+                    How AI Is Transforming the World
+                </h3>
+
+                <p>
+                    Discover how AI is changing business,
+                    healthcare, education and everyday life.
+                </p>
+
+                <a href="ai-transforming-world-2026.html"
+                   class="read-button">READ ARTICLE →</a>
+
+            </div>
+        </article>
+
+        <!-- ARTICLE 5 -->
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+                <img src="circo2-product-1.jpg"
+                     alt="Nitric Oxide and Beetroot"
+                     loading="lazy">
+                <span class="tag">Health</span>
+            </div>
+
+            <div class="blog-info">
+
+                <h3>
+                    Nitric Oxide:
+                    What It Is, Why It Matters and Which Foods Contain It
+                </h3>
+
+                <p>
+                    Learn what nitric oxide does in the body,
+                    explore helpful foods and understand
+                    supplement considerations.
+                </p>
+
+                <a href="nitric-oxide-guide.html"
+                   class="read-button">READ ARTICLE →</a>
+
+            </div>
+        </article>
+
+        <!-- ARTICLE 6 -->
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+                <img src="wealth-signal.JPG"
+                     alt="The Wealth Signal Program"
+                     loading="lazy">
+                <span class="tag">Personal Development</span>
+            </div>
+
+            <div class="blog-info">
+
+                <h3>
+                    The Wealth Signal Review:
+                    What Is It and What Should You Know?
+                </h3>
+
+                <p>
+                    Explore an overview of The Wealth Signal,
+                    its advertised features and important
+                    points to consider before purchasing.
+                </p>
+
+                <a href="the-wealth-signal-review.html"
+                   class="read-button">READ REVIEW →</a>
+
+            </div>
+        </article>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        <strong>Affiliate Disclosure:</strong>
+        Some links on this website are affiliate links.
+        We may earn a commission at no extra cost to you.
+    </p>
+
+    <p>
+        Follow us:
         <a href="https://www.facebook.com/WHF.shahid/"
            target="_blank"
            rel="noopener">Facebook</a>
     </p>
 
-    <p>© 2026 HealthDigitalPicks. All rights reserved.</p>
-</footer>
+    <p>
+        © 2026 HealthDigitalPicks.
+        All rights reserved.
+    </p>
 
-<script data-goatcounter="https://smartbuying.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+</footer>
 
 </body>
 </html>
